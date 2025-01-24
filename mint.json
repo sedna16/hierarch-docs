@@ -53,6 +53,14 @@
       "group": "Get Started",
       "pages": [
         "introduction",
+        "tutorials",
+        "integrations",
+        "api",
+        "workflows",
+        "resources",
+        "faqs",
+        
+        
         "quickstart",
         "development",
         "sample-page"
