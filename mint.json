@@ -57,7 +57,8 @@
             "group": "Tutorials",
             "pages": [
               "tutorials",
-              "/tutorials/how-to-create-company"
+              "/tutorials/how-to-create-company",
+              "/tutorials/how-to-edit-company-information"
             ]
         },
         "integrations",
