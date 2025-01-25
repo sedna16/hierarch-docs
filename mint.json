@@ -1,5 +1,5 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
+  "$schema": "https://mintlify.com/schema.json", 
   "name": "Starter Kit",
   "logo": {
     "dark": "/logo/logo-text-dark.png",
