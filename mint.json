@@ -61,9 +61,7 @@
               "/tutorials/how-to-edit-company-information",
               "/tutorials/how-to-delete-company",
               "/tutorials/how-to-create-product",
-              "/tutorials/how-to-edit-product-information",
-              "/tutorials/how-to-edit-delete-product",
-              "/tutorials/how-to-edit-delete-product"
+              "/tutorials/how-to-edit-product-information"
             ]
         },
         "integrations",
@@ -74,8 +72,7 @@
         
         
         "quickstart", 
-        "development",
-        "sample-page"
+        "development"
       ]
     },
     {
