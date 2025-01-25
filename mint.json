@@ -62,7 +62,8 @@
               "/tutorials/how-to-delete-company",
               "/tutorials/how-to-create-product",
               "/tutorials/how-to-edit-product-information",
-              "/tutorials/how-to-delete-product"
+              "/tutorials/how-to-delete-product",
+              "/tutorials/how-to-add-pipeline-stage"
             ]
         },
         "integrations",
