@@ -53,8 +53,13 @@
       "group": "Get Started",
       "pages": [
         "introduction",
-        "tutorials",
-        
+        {
+            "group": "Tutorials",
+            "pages": [
+              "tutorials",
+              "how-to-create-company",
+            ]
+        },
         "integrations",
         "api",
         "workflows",
@@ -63,13 +68,6 @@
         
         
         "quickstart", 
-            {
-                "group": "Tutorials",
-                "pages": [
-                  "tutorials",
-                  "how-to-create-company",
-                ]
-            },
         "development",
         "sample-page"
       ]
