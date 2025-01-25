@@ -54,6 +54,7 @@
       "pages": [
         "introduction",
         "tutorials",
+        
         "integrations",
         "api",
         "workflows",
@@ -62,6 +63,10 @@
         
         
         "quickstart",
+            {
+                "group": "Nested Reference Pages",
+                "pages": ["nested-reference-page"]
+            },
         "development",
         "sample-page"
       ]
