@@ -76,7 +76,8 @@
               "/tutorials/how-to-edit-consultation-information",
               "/tutorials/how-to-create-assignment-record",
               "/tutorials/how-to-edit-assignment-information",
-              "/tutorials/how-to-delete-assignment-record"
+              "/tutorials/how-to-delete-assignment-record",
+              "/tutorials/how-to-create-client-record"
             ]
         },
         "integrations",
