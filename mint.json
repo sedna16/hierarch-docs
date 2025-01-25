@@ -64,7 +64,8 @@
               "/tutorials/how-to-edit-product-information",
               "/tutorials/how-to-delete-product",
               "/tutorials/how-to-add-pipeline-stage",
-              "/tutorials/how-to-edit-pipeline-stage"
+              "/tutorials/how-to-edit-pipeline-stage",
+              "/tutorials/how-to-remove-pipeline-stage"
             ]
         },
         "integrations",
