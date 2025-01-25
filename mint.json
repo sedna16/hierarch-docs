@@ -79,7 +79,8 @@
               "/tutorials/how-to-delete-assignment-record",
               "/tutorials/how-to-create-client-record",
               "/tutorials/how-to-send-invite-to-client",
-              "/tutorials/how-to-edit-client-information"
+              "/tutorials/how-to-edit-client-information",
+              "/tutorials/how-to-delete-client-record"
             ]
         },
         "integrations",
