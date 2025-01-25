@@ -64,8 +64,11 @@
         
         "quickstart",
             {
-                "group": "Nested Reference Pages",
-                "pages": ["faqs"]
+                "group": "Tutorials",
+                "pages": [
+                  "tutorials",
+                  "how-to-create-company",
+                ]
             },
         "development",
         "sample-page"
