@@ -88,7 +88,8 @@
               "/tutorials/how-to-create-personnel-record",
               "/tutorials/how-to-send-invite-to-personnel",
               "/tutorials/how-to-edit-personnel-information",
-              "/tutorials/how-to-delete-personnel-record"
+              "/tutorials/how-to-delete-personnel-record",
+              "/tutorials/how-to-create-workflow"
             ]
         },
         "integrations",
