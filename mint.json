@@ -98,8 +98,7 @@
         {
             "group": "API Documentation",
             "pages": [
-              "api",
-              "/tutorials/how-to-create-company",
+              "api"
             ]
         },
         "workflows",
