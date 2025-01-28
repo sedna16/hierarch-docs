@@ -5,7 +5,7 @@
     "dark": "/logo/logo-text-dark.png",
     "light": "/logo/logo-text.png"
   },
-  "favicon": "https://app.hierarch.io/favicon.ico",
+  "favicon": "favicon.svg",
   "colors": {
     "primary": "#0D9373",
     "light": "#07C983",
