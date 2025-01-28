@@ -95,7 +95,12 @@
             ]
         },
         "integrations",
-        "api",
+        {
+            "group": "Tutorials",
+            "pages": [
+              "api"
+            ]
+        },
         "workflows",
         "resources",
         "faqs",
