@@ -96,7 +96,7 @@
         },
         "integrations",
         {
-            "group": "Tutorials",
+            "group": "API Documentation",
             "pages": [
               "api"
             ]
