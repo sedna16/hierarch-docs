@@ -95,7 +95,8 @@
               "/tutorials/how-to-add-module",
               "/tutorials/how-to-select-data-from-another-module",
               "/tutorials/how-to-change-trigger-module",
-              "/tutorials/how-to-delete-module"
+              "/tutorials/how-to-delete-module",
+              "/tutorials/how-to-add-router-node"
             ]
         },
         "integrations",
