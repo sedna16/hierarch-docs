@@ -92,7 +92,8 @@
               "/tutorials/how-to-create-workflow",
               "/tutorials/what-is-a-trigger",
               "/tutorials/what-is-a-module",
-              "/tutorials/how-to-add-module"
+              "/tutorials/how-to-add-module",
+              "/tutorials/how-to-select-data-from-another-module"
             ]
         },
         "integrations",
