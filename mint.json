@@ -108,7 +108,8 @@
             "group": "Integrations",
             "pages": [
               "integrations",
-              "/integrations/slack"
+              "/integrations/slack",
+              "/integrations/discord"
             ]
         },
         {
