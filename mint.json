@@ -104,7 +104,13 @@
               "/tutorials/how-to-change-grid-size"
             ]
         },
-        "integrations",
+        {
+            "group": "Integrations",
+            "pages": [
+              "integrations",
+              "slack"
+            ]
+        },
         {
             "group": "API Documentation",
             "pages": [
