@@ -110,7 +110,8 @@
               "integrations",
               "/integrations/slack",
               "/integrations/discord",
-              "/integrations/zapier"
+              "/integrations/zapier",
+              "/integrations/integromat-make-com"
             ]
         },
         {
