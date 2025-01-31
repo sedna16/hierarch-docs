@@ -111,7 +111,8 @@
               "/integrations/slack",
               "/integrations/discord",
               "/integrations/zapier",
-              "/integrations/integromat-make-com"
+              "/integrations/integromat-make-com",
+              "/integrations/hubspot"
             ]
         },
         {
