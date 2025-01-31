@@ -112,7 +112,8 @@
               "/integrations/discord",
               "/integrations/zapier",
               "/integrations/integromat-make-com",
-              "/integrations/hubspot"
+              "/integrations/hubspot",
+              "/integrations/asana"
             ]
         },
         {
