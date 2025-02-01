@@ -114,7 +114,8 @@
               "/integrations/integromat-make-com",
               "/integrations/hubspot",
               "/integrations/asana",
-              "/integrations/trello"
+              "/integrations/trello",
+              "/integrations/monday"
             ]
         },
         {
