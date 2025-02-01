@@ -113,7 +113,8 @@
               "/integrations/zapier",
               "/integrations/integromat-make-com",
               "/integrations/hubspot",
-              "/integrations/asana"
+              "/integrations/asana",
+              "/integrations/trello"
             ]
         },
         {
