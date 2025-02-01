@@ -117,7 +117,8 @@
               "/integrations/trello",
               "/integrations/monday",
               "/integrations/notion",
-              "/integrations/airtable"
+              "/integrations/airtable",
+              "/integrations/mailchimp"
             ]
         },
         {
