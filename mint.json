@@ -115,7 +115,8 @@
               "/integrations/hubspot",
               "/integrations/asana",
               "/integrations/trello",
-              "/integrations/monday"
+              "/integrations/monday",
+              "/integrations/notion"
             ]
         },
         {
