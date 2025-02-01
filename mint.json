@@ -116,7 +116,8 @@
               "/integrations/asana",
               "/integrations/trello",
               "/integrations/monday",
-              "/integrations/notion"
+              "/integrations/notion",
+              "/integrations/airtable"
             ]
         },
         {
