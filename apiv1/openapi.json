@@ -129,6 +129,10 @@
         }
       }
     },
+
+
+
+
     "/company/get/{company_slug}/": {
       "get": {
         "description": "Retrieves company information",
@@ -148,7 +152,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
+                  "type": "object",
                   "items": {
                     "$ref": "#/components/schemas/Company"
                   }
@@ -189,6 +193,12 @@
         }
       }
     }
+
+
+
+
+
+
   },
   "components": {
     "schemas": {
