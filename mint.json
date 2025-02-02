@@ -32,7 +32,7 @@
     },
     {
       "name": "Changelogs",
-      "url": "https://hierarchio.mintlify.app/changelog"
+      "url": "/changelog"
     }
   ],
   "anchors": [
