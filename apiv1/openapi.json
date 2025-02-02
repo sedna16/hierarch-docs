@@ -193,7 +193,44 @@
           "url": {
             "description": "Company website",
             "type": "string"
+          },
+          "description": {
+            "description": "Company description",
+            "type": "string"
+          },
+          "slogan": {
+            "description": "Company slogan",
+            "type": "string"
+          },
+          "country": {
+            "description": "Country where the company is based",
+            "type": "string"
+          },
+          "address": {
+            "description": "Complete company address",
+            "type": "string"
+          },
+          "state_region": {
+            "description": "State / Region",
+            "type": "string"
+          },
+          "postcode": {
+            "description": "Postal code",
+            "type": "string"
+          },
+          "sector": {
+            "description": "Business sector",
+            "type": "string"
+          },
+          "industry": {
+            "description": "Industry that the company operates",
+            "type": "string"
+          },
+          "currency": {
+            "description": "Currency used in transactions",
+            "type": "string"
           }
+          
         }
       },
       "NewPlant": {
