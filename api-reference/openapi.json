@@ -96,6 +96,8 @@
         }
       }
     },
+
+    
     "/plants/{id}": {
       "delete": {
         "description": "Deletes a single plant based on the ID supplied",
@@ -128,7 +130,69 @@
           }
         }
       }
+    },
+
+    "/company/get/{company_slug}/": {
+      "get": {
+        "description": "Retrieves company information into a dictionary",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "query",
+            "description": "This is your company url",
+            "schema": {
+              "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Company"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Missing_parameters"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Missing parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Missing_parameters"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Missing parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Missing_parameters"
+                }
+              }
+            }
+          },
+        }
+      }
     }
+
+    
   },
   "components": {
     "schemas": {
@@ -183,7 +247,35 @@
             "type": "string"
           }
         }
+      },
+
+
+      "Company": {
+        "required": [
+          "company_slug"
+        ],
+        "type": "object",
+        "properties": {
+          "company_slug": {
+            "description": "Company url",
+            "type": "string"
+          }
+        }
       }
+      "Missing_parameters": {
+        "required": [
+          "error",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "missing parameters"
+          }
+        }
+      }
+      
+      
     },
     "securitySchemes": {
       "bearerAuth": {
