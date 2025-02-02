@@ -15,7 +15,7 @@
   ],
   "security": [
     {
-      "bearerAuth": []
+      "api_key": []
     }
   ],
   "paths": {
@@ -129,6 +129,10 @@
         }
       }
     },
+
+
+
+
     "/company/get/{company_slug}/": {
       "get": {
         "description": "Retrieves company information",
@@ -148,20 +152,40 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
+                  "type": "object",
                   "items": {
-                    "$ref": "#/components/schemas/Plant"
+                    "$ref": "#/components/schemas/Company"
                   }
                 }
               }
             }
           },
           "400": {
-            "description": "Unexpected error",
+            "description": "Missing Parameters",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
                 }
               }
             }
@@ -169,10 +193,69 @@
         }
       }
     }
+
+
+
+
+
+
   },
   "components": {
     "schemas": {
       "Plant": {
+        "required": [
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "slug": {
+            "description": "The company url",
+            "type": "string"
+          },
+          "name": {
+            "description": "The name of the company",
+            "type": "string"
+          }
+        }
+      },
+      "NewPlant": {
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Plant"
+          },
+          {
+            "required": [
+              "id"
+            ],
+            "type": "object",
+            "properties": {
+              "id": {
+                "description": "Identification number of the plant",
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          }
+        ]
+      },
+      "Error": {
+        "required": [
+          "error",
+          "message"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "message": {
+            "type": "string"
+          }
+        }
+      },
+
+      "Company": {
         "required": [
           "slug"
         ],
@@ -244,7 +327,7 @@
           },
           "datetime": {
             "description": "Date and time the company was created",
-            "type": "datetime"
+            "type": "string"
           },
           "skype": {
             "description": "Company skype account",
@@ -303,77 +386,71 @@
             "type": "string"
           },
           "sunday": {
-            "description": "True if company operates on Sunday",
+            "description": "true if company operates on Sunday",
             "type": "string"
           },
           "monday": {
-            "description": "True if company operates on Monday",
+            "description": "true if company operates on Monday",
             "type": "string"
           },
           "tuesday": {
-            "description": "True if company operates on Tuesday",
+            "description": "true if company operates on Tuesday",
             "type": "string"
           },
           "wednesday": {
-            "description": "True if company operates on Wednesday",
+            "description": "true if company operates on Wednesday",
             "type": "string"
           },
           "thusrday": {
-            "description": "True if company operates on Thursday",
+            "description": "true if company operates on Thursday",
             "type": "string"
           },
           "friday": {
-            "description": "True if company operates on Friday",
+            "description": "true if company operates on Friday",
             "type": "string"
           },
           "saturday": {
-            "description": "True if company operates on Saturday",
+            "description": "true if company operates on Saturday",
             "type": "string"
           }
         }
       },
-      "NewPlant": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
-          }
-        ]
-      },
-      "Error": {
+      "Error400": {
         "required": [
-          "error",
-          "message"
+          "result"
         ],
         "type": "object",
         "properties": {
-          "error": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "message": {
+          "result": {
             "type": "string"
           }
         }
+      },
+      "Error_nested": {
+        "required": [
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "object",
+            "properties":{
+              "hey": {
+                "type": "string"
+              }
+            }
+          }
+        }
       }
+
     },
     "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
+      "api_key": {
+        "type": "apiKey",
+        "name": "token",
+        "in": "header"
       }
     }
+    
   }
 }
