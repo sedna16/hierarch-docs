@@ -414,7 +414,8 @@
         "type": "object",
         "properties": {
           "result": {
-            "type": "string"
+            "type": "string",
+            "message": "missing parameters"
           }
         }
       }
