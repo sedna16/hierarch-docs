@@ -148,7 +148,7 @@
         ],
         "responses": {
           "200": {
-            "description": "Plant response",
+            "description": "OK Response",
             "content": {
               "application/json": {
                 "schema": {
@@ -168,7 +168,7 @@
             }
           },
           "404": {
-            "description": "Missing Parameters",
+            "description": "Not Found",
             "content": {
               "application/json": {
                 "schema": {
@@ -178,7 +178,88 @@
             }
           },
           "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error500"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/product/query/{company_slug}/": {
+      "get": {
+        "description": "Retrieves product array",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "query",
+            "description": "This is your company url",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "header",
+            "description": "Search term, blank by default",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "header",
+            "description": "Page number",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "header",
+            "description": "Data order - newest / oldest",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Company"
+                }
+              }
+            }
+          },
+          "400": {
             "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
             "content": {
               "application/json": {
                 "schema": {
@@ -190,7 +271,6 @@
         }
       }
     }
-
 
 
 
@@ -445,7 +525,7 @@
           }
         }
       },
-      "Error_nested": {
+      "Error_nested_sample": {
         "required": [
           "result"
         ],
