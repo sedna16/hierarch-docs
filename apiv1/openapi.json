@@ -157,11 +157,11 @@
             }
           },
           "400": {
-            "description": "Unexpected error",
+            "description": "Missing Parameters",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Error"
+                  "$ref": "#/components/schemas/Error400"
                 }
               }
             }
@@ -384,6 +384,17 @@
           "saturday": {
             "description": "true if company operates on Saturday",
             "type": "string"
+          }
+        }
+      },
+      "Error400": {
+        "required": [
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "message": {
+            "type": "missing parameters"
           }
         }
       }
