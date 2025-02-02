@@ -409,13 +409,13 @@
       },
       "Error400": {
         "required": [
-          "result"
+          "items"
         ],
         "type": "object",
         "properties": {
-          "result": {
-            "type": "string",
-            "description": "missing parameters"
+          "items": {
+            "type": "array",
+            "items": "string"
           }
         }
       }
