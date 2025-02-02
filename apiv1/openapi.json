@@ -412,7 +412,12 @@
         "type": "object",
         "properties": {
           "result": {
-            "type": "object"
+            "type": "object",
+            "properties":{
+              "hey": {
+                "type": "string"
+              }
+            }
           }
         }
       }
