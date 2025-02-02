@@ -278,7 +278,7 @@
         "parameters": [
           {
             "name": "company_slug",
-            "in": "query",
+            "in": "url",
             "description": "This is your company url",
             "schema": {
               "type": "string"
@@ -286,7 +286,7 @@
           },
           {
             "name": "product_id",
-            "in": "query",
+            "in": "url",
             "description": "Product ID",
             "schema": {
               "type": "string"
