@@ -245,8 +245,6 @@
         }
       },
 
-
-
       "Company": {
         "required": [
           "slug"
@@ -418,8 +416,6 @@
           }
         }
       }
-
-
 
     },
     "securitySchemes": {
