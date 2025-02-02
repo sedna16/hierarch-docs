@@ -264,7 +264,6 @@
       },
       "Missing_parameters": {
         "required": [
-          "error",
           "message"
         ],
         "type": "object",
