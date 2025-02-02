@@ -174,16 +174,60 @@
     "schemas": {
       "Plant": {
         "required": [
-          "name"
+          "slug"
         ],
         "type": "object",
         "properties": {
-          "name": {
-            "description": "The name of the plant",
+          "slug": {
+            "description": "The company url",
             "type": "string"
           },
-          "tag": {
-            "description": "Tag to specify the type",
+          "name": {
+            "description": "The name of the company",
+            "type": "string"
+          },
+          "email": {
+            "description": "The email of the owner",
+            "type": "string"
+          },
+          "url": {
+            "description": "Company website",
+            "type": "string"
+          },
+          "description": {
+            "description": "Company description",
+            "type": "string"
+          },
+          "slogan": {
+            "description": "Company slogan",
+            "type": "string"
+          },
+          "country": {
+            "description": "Country where the company is based",
+            "type": "string"
+          },
+          "address": {
+            "description": "Complete company address",
+            "type": "string"
+          },
+          "state_region": {
+            "description": "State / Region",
+            "type": "string"
+          },
+          "postcode": {
+            "description": "Postal code",
+            "type": "string"
+          },
+          "sector": {
+            "description": "Business sector",
+            "type": "string"
+          },
+          "industry": {
+            "description": "Industry that the company operates",
+            "type": "string"
+          },
+          "currency": {
+            "description": "Currency used in transactions",
             "type": "string"
           }
         }
