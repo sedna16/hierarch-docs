@@ -127,7 +127,7 @@
             "group": "API Documentation",
             "pages": [
               "api",
-              "/api/auth"
+              "/apiv1/auth"
             ]
         },
         "workflows",
