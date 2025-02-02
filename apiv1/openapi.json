@@ -241,6 +241,10 @@
           "thumbnail": {
             "description": "Auto-generated - Company thumbnail url",
             "type": "string"
+          },
+          "datetime": {
+            "description": "Date and time the company was created",
+            "type": "datetime"
           }
           
         }
