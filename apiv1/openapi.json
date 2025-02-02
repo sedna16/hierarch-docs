@@ -131,15 +131,14 @@
     },
     "/v1/company/get/{company_slug}/": {
       "get": {
-        "description": "Returns all plants from the system that the user has access to",
+        "description": "Retrieves company information",
         "parameters": [
           {
-            "name": "limit",
+            "name": "company_slug",
             "in": "query",
-            "description": "The maximum number of results to return",
+            "description": "This is your company url",
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
