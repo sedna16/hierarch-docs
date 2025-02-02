@@ -118,7 +118,8 @@
               "/integrations/monday",
               "/integrations/notion",
               "/integrations/airtable",
-              "/integrations/mailchimp"
+              "/integrations/mailchimp",
+              "/integrations/activecampaign"
             ]
         },
         {
