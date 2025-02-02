@@ -15,7 +15,7 @@
   ],
   "security": [
     {
-      "bearerAuth": []
+      "api_key": []
     }
   ],
   "paths": {
@@ -150,7 +150,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Plant"
+                    "$ref": "#/components/schemas/Company"
                   }
                 }
               }
@@ -503,31 +503,31 @@
           },
           "sunday": {
             "description": "true if company operates on Sunday",
-            "type": "boolean"
+            "type": "string"
           },
           "monday": {
             "description": "true if company operates on Monday",
-            "type": "boolean"
+            "type": "string"
           },
           "tuesday": {
             "description": "true if company operates on Tuesday",
-            "type": "boolean"
+            "type": "string"
           },
           "wednesday": {
             "description": "true if company operates on Wednesday",
-            "type": "boolean"
+            "type": "string"
           },
           "thusrday": {
             "description": "true if company operates on Thursday",
-            "type": "boolean"
+            "type": "string"
           },
           "friday": {
             "description": "true if company operates on Friday",
-            "type": "boolean"
+            "type": "string"
           },
           "saturday": {
             "description": "true if company operates on Saturday",
-            "type": "json"
+            "type": "string"
           }
         }
       }
@@ -536,10 +536,12 @@
 
     },
     "securitySchemes": {
-      "bearerAuth": {
-        "type": "http",
-        "scheme": "bearer"
+      "api_key": {
+        "type": "apiKey",
+        "name": "token",
+        "in": "header"
       }
     }
+    
   }
 }
