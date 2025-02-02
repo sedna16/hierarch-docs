@@ -129,7 +129,7 @@
         }
       }
     },
-    "/v1/company/get/{company_slug}/": {
+    "/company/get/{company_slug}/": {
       "get": {
         "description": "Retrieves company information",
         "parameters": [
