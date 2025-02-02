@@ -303,35 +303,32 @@
             "type": "string"
           },
           "sunday": {
-            "description": "True if company operates on Sunday",
-            "type": "string"
+            "description": "true if company operates on Sunday",
+            "type": "boolean"
           },
           "monday": {
-            "description": "True if company operates on Monday",
-            "type": "string"
+            "description": "true if company operates on Monday",
+            "type": "boolean"
           },
           "tuesday": {
-            "description": "True if company operates on Tuesday",
-            "type": "string"
+            "description": "true if company operates on Tuesday",
+            "type": "boolean"
           },
           "wednesday": {
-            "description": "True if company operates on Wednesday",
-            "type": "string"
+            "description": "true if company operates on Wednesday",
+            "type": "boolean"
           },
           "thusrday": {
-            "description": "True if company operates on Thursday",
-            "type": "string"
+            "description": "true if company operates on Thursday",
+            "type": "boolean"
           },
           "friday": {
-            "description": "True if company operates on Friday",
-            "type": "string"
+            "description": "true if company operates on Friday",
+            "type": "boolean"
           },
           "saturday": {
-            "description": "True if company operates on Saturday",
-            "type": "array",
-            "array": [
-              "item1","item2"
-            ]
+            "description": "true if company operates on Saturday",
+            "type": "json"
           }
         }
       },
