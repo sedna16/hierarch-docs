@@ -229,6 +229,18 @@
           "currency": {
             "description": "Currency used in transactions",
             "type": "string"
+          },
+          "logo": {
+            "description": "Company logo url",
+            "type": "string"
+          },
+          "banner": {
+            "description": "Company banner url",
+            "type": "string"
+          },
+          "thumbnail": {
+            "description": "Auto-generated - Company thumbnail url",
+            "type": "string"
           }
           
         }
