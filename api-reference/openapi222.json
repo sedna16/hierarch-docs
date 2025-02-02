@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
+      "url": "https://api.hierarch.io/v1"
     }
   ],
   "security": [
@@ -128,22 +128,206 @@
           }
         }
       }
+    },
+    "/company/get/{company_slug}/": {
+      "get": {
+        "description": "Retrieves company information",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "query",
+            "description": "This is your company url",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Plant response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Plant"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
     }
   },
   "components": {
     "schemas": {
       "Plant": {
         "required": [
-          "name"
+          "slug"
         ],
         "type": "object",
         "properties": {
-          "name": {
-            "description": "The name of the plant",
+          "slug": {
+            "description": "The company url",
             "type": "string"
           },
-          "tag": {
-            "description": "Tag to specify the type",
+          "name": {
+            "description": "The name of the company",
+            "type": "string"
+          },
+          "email": {
+            "description": "The email of the owner",
+            "type": "string"
+          },
+          "url": {
+            "description": "Company website",
+            "type": "string"
+          },
+          "description": {
+            "description": "Company description",
+            "type": "string"
+          },
+          "slogan": {
+            "description": "Company slogan",
+            "type": "string"
+          },
+          "country": {
+            "description": "Country where the company is based",
+            "type": "string"
+          },
+          "address": {
+            "description": "Complete company address",
+            "type": "string"
+          },
+          "state_region": {
+            "description": "State / Region",
+            "type": "string"
+          },
+          "postcode": {
+            "description": "Postal code",
+            "type": "string"
+          },
+          "sector": {
+            "description": "Business sector",
+            "type": "string"
+          },
+          "industry": {
+            "description": "Industry that the company operates",
+            "type": "string"
+          },
+          "currency": {
+            "description": "Currency used in transactions",
+            "type": "string"
+          },
+          "logo": {
+            "description": "Company logo url",
+            "type": "string"
+          },
+          "banner": {
+            "description": "Company banner url",
+            "type": "string"
+          },
+          "thumbnail": {
+            "description": "Auto-generated - Company thumbnail url",
+            "type": "string"
+          },
+          "datetime": {
+            "description": "Date and time the company was created",
+            "type": "datetime"
+          },
+          "skype": {
+            "description": "Company skype account",
+            "type": "string"
+          },
+          "slack": {
+            "description": "Company slack account",
+            "type": "string"
+          },
+          "whatsapp": {
+            "description": "Company whatsapp account",
+            "type": "string"
+          },
+          "msteams": {
+            "description": "Company msteams account",
+            "type": "string"
+          },
+          "discord": {
+            "description": "Company discord account",
+            "type": "string"
+          },
+          "linkedin": {
+            "description": "Company linkedin account",
+            "type": "string"
+          },
+          "github": {
+            "description": "Company github account",
+            "type": "string"
+          },
+          "facebook": {
+            "description": "Company facebook account",
+            "type": "string"
+          },
+          "instagram": {
+            "description": "Company instagram account",
+            "type": "string"
+          },
+          "twitter": {
+            "description": "Company X/twitter account",
+            "type": "string"
+          },
+          "pinterest": {
+            "description": "Company pinterest account",
+            "type": "string"
+          },
+          "business_hour_start": {
+            "description": "Start time for company operations",
+            "type": "string"
+          },
+          "business_hour_end": {
+            "description": "Closing time for company operations",
+            "type": "string"
+          },
+          "timezone": {
+            "description": "Timezone",
+            "type": "string"
+          },
+          "sunday": {
+            "description": "True if company operates on Sunday",
+            "type": "string"
+          },
+          "monday": {
+            "description": "True if company operates on Monday",
+            "type": "string"
+          },
+          "tuesday": {
+            "description": "True if company operates on Tuesday",
+            "type": "string"
+          },
+          "wednesday": {
+            "description": "True if company operates on Wednesday",
+            "type": "string"
+          },
+          "thusrday": {
+            "description": "True if company operates on Thursday",
+            "type": "string"
+          },
+          "friday": {
+            "description": "True if company operates on Friday",
+            "type": "string"
+          },
+          "saturday": {
+            "description": "True if company operates on Saturday",
             "type": "string"
           }
         }
