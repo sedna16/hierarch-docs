@@ -165,6 +165,26 @@
                 }
               }
             }
+          },
+          "404": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
           }
         }
       }
