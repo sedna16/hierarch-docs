@@ -9,7 +9,7 @@
   },
   "servers": [
     {
-      "url": "http://sandbox.mintlify.com"
+      "url": "https://api.hierarch.io/v1"
     }
   ],
   "security": [
