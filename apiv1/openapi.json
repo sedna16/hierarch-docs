@@ -272,7 +272,7 @@
       }
     }
     ,
-    "/product/get/{company_slug}/": {
+    "/product/get/{company_slug}//{product_id}/": {
       "get": {
         "description": "Retrieves single product information",
         "parameters": [
@@ -280,6 +280,14 @@
             "name": "company_slug",
             "in": "query",
             "description": "This is your company url",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "product_id",
+            "in": "query",
+            "description": "Product ID",
             "schema": {
               "type": "string"
             }
