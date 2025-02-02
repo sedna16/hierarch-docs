@@ -119,7 +119,8 @@
               "/integrations/notion",
               "/integrations/airtable",
               "/integrations/mailchimp",
-              "/integrations/activecampaign"
+              "/integrations/activecampaign",
+              "/integrations/brevo"
             ]
         },
         {
