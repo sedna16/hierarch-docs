@@ -412,7 +412,6 @@
         "type": "object",
         "properties": {
           "result": {
-            "desription": "missing parameters",
             "type": "string"
           }
         }
