@@ -414,10 +414,7 @@
         "type": "object",
         "properties": {
           "result": {
-            "type": "object",
-            "properties": {
-              "sub": "string"
-            }
+            "type": "object"
           }
         }
       }
