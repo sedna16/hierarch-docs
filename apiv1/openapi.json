@@ -141,6 +141,7 @@
             "name": "company_slug",
             "in": "path",
             "description": "This is your company url",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -198,6 +199,7 @@
             "name": "company_slug",
             "in": "path",
             "description": "This is your company url",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -279,6 +281,7 @@
             "name": "company_slug",
             "in": "path",
             "description": "This is your company url",
+            "required": true,
             "schema": {
               "type": "string"
             }
@@ -287,6 +290,7 @@
             "name": "product_id",
             "in": "path",
             "description": "Product ID",
+            "required": true,
             "schema": {
               "type": "string"
             }
