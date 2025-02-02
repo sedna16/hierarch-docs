@@ -1,1 +1,7 @@
-
+{
+  "openapi": "3.0.1",
+  "info": {
+    "description": "Public API for Hierarch.io",
+    "version": "1.0.0"
+  },
+}
