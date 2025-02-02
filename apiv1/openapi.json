@@ -139,7 +139,7 @@
         "parameters": [
           {
             "name": "company_slug",
-            "in": "query",
+            "in": "path",
             "description": "This is your company url",
             "schema": {
               "type": "string"
@@ -196,7 +196,7 @@
         "parameters": [
           {
             "name": "company_slug",
-            "in": "query",
+            "in": "path",
             "description": "This is your company url",
             "schema": {
               "type": "string"
@@ -270,15 +270,14 @@
           }
         }
       }
-    }
-    ,
+    },
     "/product/get/{company_slug}/{product_id}/": {
       "get": {
         "description": "Retrieves single product information",
         "parameters": [
           {
             "name": "company_slug",
-            "in": "url",
+            "in": "path",
             "description": "This is your company url",
             "schema": {
               "type": "string"
@@ -286,7 +285,7 @@
           },
           {
             "name": "product_id",
-            "in": "url",
+            "in": "path",
             "description": "Product ID",
             "schema": {
               "type": "string"
