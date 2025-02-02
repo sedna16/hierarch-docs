@@ -130,7 +130,7 @@
               "/apiv1/auth",
               "/apiv1/get-company",
               "/apiv1/get-products",
-              "/apiv1/get-prdouct",
+              "/apiv1/get-product",
               "/apiv1/create-product"
             ]
         },
