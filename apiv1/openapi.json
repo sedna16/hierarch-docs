@@ -328,7 +328,10 @@
           },
           "saturday": {
             "description": "True if company operates on Saturday",
-            "type": "array"
+            "type": "array",
+            "array": [
+              "item1","item2"
+            ]
           }
         }
       },
