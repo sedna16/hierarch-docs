@@ -272,7 +272,7 @@
       }
     }
     ,
-    "/product/get/{company_slug}//{product_id}/": {
+    "/product/get/{company_slug}/{product_id}/": {
       "get": {
         "description": "Retrieves single product information",
         "parameters": [
