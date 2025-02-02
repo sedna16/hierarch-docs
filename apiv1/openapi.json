@@ -10,7 +10,7 @@
   },
   "servers": [
     {
-      "url": "https://api.hierarch.io/v1"
+      "url": "http://sandbox.mintlify.com"
     }
   ],
   "security": [
@@ -134,60 +134,42 @@
 
     "/company/get/{company_slug}/": {
       "get": {
-        "description": "Retrieves company information into a dictionary",
+        "description": "Returns all plants from the system that the user has access to",
         "parameters": [
           {
-            "name": "company_slug",
+            "name": "limit",
             "in": "query",
-            "description": "This is your company url",
+            "description": "The maximum number of results to return",
             "schema": {
-              "type": "string"
+              "type": "integer",
+              "format": "int32"
+            }
           }
         ],
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Plant response",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Company"
+                    "$ref": "#/components/schemas/Plant"
                   }
                 }
               }
             }
           },
           "400": {
-            "description": "Missing parameters",
+            "description": "Unexpected error",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Missing_parameters"
+                  "$ref": "#/components/schemas/Error"
                 }
               }
             }
-          },
-          "404": {
-            "description": "Missing parameters",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Missing_parameters"
-                }
-              }
-            }
-          },
-          "500": {
-            "description": "Missing parameters",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Missing_parameters"
-                }
-              }
-            }
-          },
+          }
         }
       }
     }
@@ -264,7 +246,6 @@
       },
       "Missing_parameters": {
         "required": [
-          "error",
           "message"
         ],
         "type": "object",
