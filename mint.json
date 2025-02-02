@@ -126,7 +126,8 @@
         {
             "group": "API Documentation",
             "pages": [
-              "api"
+              "api",
+              "/api/authentication"
             ]
         },
         "workflows",
