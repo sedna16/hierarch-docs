@@ -412,6 +412,18 @@
         "type": "object",
         "properties": {
           "result": {
+            "desription": "missing parameters",
+            "type": "string"
+          }
+        }
+      },
+      "Error_nested": {
+        "required": [
+          "result"
+        ],
+        "type": "object",
+        "properties": {
+          "result": {
             "type": "object",
             "properties":{
               "hey": {
