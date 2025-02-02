@@ -4,4 +4,17 @@
     "description": "Public API for Hierarch.io",
     "version": "1.0.0"
   },
+  "license": {
+    "name": "MIT"
+  },
+  "servers": [
+    {
+      "url": "http://sandbox.mintlify.com"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
 }
