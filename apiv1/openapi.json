@@ -229,6 +229,106 @@
           "currency": {
             "description": "Currency used in transactions",
             "type": "string"
+          },
+          "logo": {
+            "description": "Company logo url",
+            "type": "string"
+          },
+          "banner": {
+            "description": "Company banner url",
+            "type": "string"
+          },
+          "thumbnail": {
+            "description": "Auto-generated - Company thumbnail url",
+            "type": "string"
+          },
+          "datetime": {
+            "description": "Date and time the company was created",
+            "type": "datetime"
+          },
+          "skype": {
+            "description": "Company skype account",
+            "type": "string"
+          },
+          "slack": {
+            "description": "Company slack account",
+            "type": "string"
+          },
+          "whatsapp": {
+            "description": "Company whatsapp account",
+            "type": "string"
+          },
+          "msteams": {
+            "description": "Company msteams account",
+            "type": "string"
+          },
+          "discord": {
+            "description": "Company discord account",
+            "type": "string"
+          },
+          "linkedin": {
+            "description": "Company linkedin account",
+            "type": "string"
+          },
+          "github": {
+            "description": "Company github account",
+            "type": "string"
+          },
+          "facebook": {
+            "description": "Company facebook account",
+            "type": "string"
+          },
+          "instagram": {
+            "description": "Company instagram account",
+            "type": "string"
+          },
+          "twitter": {
+            "description": "Company X/twitter account",
+            "type": "string"
+          },
+          "pinterest": {
+            "description": "Company pinterest account",
+            "type": "string"
+          },
+          "business_hour_start": {
+            "description": "Start time for company operations",
+            "type": "string"
+          },
+          "business_hour_end": {
+            "description": "Closing time for company operations",
+            "type": "string"
+          },
+          "timezone": {
+            "description": "Timezone",
+            "type": "string"
+          },
+          "sunday": {
+            "description": "True if company operates on Sunday",
+            "type": "string"
+          },
+          "monday": {
+            "description": "True if company operates on Monday",
+            "type": "string"
+          },
+          "tuesday": {
+            "description": "True if company operates on Tuesday",
+            "type": "string"
+          },
+          "wednesday": {
+            "description": "True if company operates on Wednesday",
+            "type": "string"
+          },
+          "thusrday": {
+            "description": "True if company operates on Thursday",
+            "type": "string"
+          },
+          "friday": {
+            "description": "True if company operates on Friday",
+            "type": "string"
+          },
+          "saturday": {
+            "description": "True if company operates on Saturday",
+            "type": "string"
           }
         }
       },
