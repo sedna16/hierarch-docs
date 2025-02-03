@@ -342,29 +342,18 @@
     },
     "/product/create/{company_slug}/": {
       "post": {
-        "description": "Creates a product",
-        "parameters": [
-          {
-            "name": "company_slug",
-            "in": "path",
-            "description": "This is your company url",
-            "required": true,
-            "schema": {
-              "type": "string"
-            },
-            "requestBody": {
-              "description": "Product Details",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "$ref": "#/components/schemas/Products_create"
-                  }
-                }
-              },
-              "required": true
+        "description": "Creates a new plant in the store",
+        "requestBody": {
+          "description": "Plant to add to the store",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/NewPlant"
+              }
             }
-          }
-        ],
+          },
+          "required": true
+        },
         "responses": {
           "200": {
             "description": "OK Response",
