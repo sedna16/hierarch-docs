@@ -713,6 +713,9 @@
         }
       },
       "Products_create": {
+        {
+          "$ref": "#/components/schemas/Plant"
+        },
         "required": [
           "id"
         ],
