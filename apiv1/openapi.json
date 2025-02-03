@@ -713,18 +713,22 @@
         }
       },
       "Products_create": {
-        {
-          "$ref": "#/components/schemas/Plant"
-        },
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "result": {
-            "type": "string"
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/Plant"
+          },
+          {
+            "required": [
+              "id"
+            ],
+            "type": "object",
+            "properties": {
+              "result": {
+                "type": "string"
+              }
+            }
           }
-        }
+        ]
       },
 
 
