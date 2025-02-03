@@ -485,7 +485,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Products_single"
+                  "$ref": "#/components/schemas/Success200"
                 }
               }
             }
@@ -834,19 +834,6 @@
             "type": "string"
           }
           
-        }
-      },
-      "Products_create_input": {
-        "required": [
-          "id"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "description": "Identification number of the plant",
-            "type": "integer",
-            "format": "int64"
-          }
         }
       },
       "Products_create": {
