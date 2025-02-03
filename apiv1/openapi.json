@@ -341,7 +341,7 @@
       }
     },
     "/product/create/{company_slug}/": {
-      "get": {
+      "post": {
         "description": "Creates a product",
         "parameters": [
           {
