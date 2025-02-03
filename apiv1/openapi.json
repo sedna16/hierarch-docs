@@ -723,25 +723,46 @@
           
         }
       },
-      "Products_create": {
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/Plant"
-          },
-          {
-            "required": [
-              "id"
-            ],
-            "type": "object",
-            "properties": {
-              "id": {
-                "description": "Identification number of the plant",
-                "type": "integer",
-                "format": "int64"
-              }
-            }
+      "Products_create_input": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Identification number of the plant",
+            "type": "integer",
+            "format": "int64"
           }
-        ]
+        }
+      },
+      "Products_create": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "name": {
+            "description": "Product name",
+            "type": "string"
+          },
+          "description": {
+            "description": "Product description",
+            "type": "string"
+          },
+          "what_you_get": {
+            "description": "Describe what the buyer will be getting",
+            "type": "string"
+          },
+          "price": {
+            "description": "Product price",
+            "type": "string"
+          },
+          "currency": {
+            "description": "Currency, e.g. USD",
+            "type": "string"
+          }
+        }
       },
 
 
