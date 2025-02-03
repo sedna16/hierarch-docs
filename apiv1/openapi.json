@@ -634,7 +634,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Products_single"
+                  "$ref": "#/components/schemas/Roles_single"
                 }
               }
             }
