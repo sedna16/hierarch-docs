@@ -353,16 +353,16 @@
               "type": "string"
             },
             "requestBody": {
-              "description": "Plant to add to the store",
+              "description": "Product Details",
               "content": {
                 "application/json": {
                   "schema": {
-                    "$ref": "#/components/schemas/NewPlant"
+                    "$ref": "#/components/schemas/Products_create"
                   }
                 }
               },
               "required": true
-            },
+            }
           }
         ],
         "responses": {
@@ -371,7 +371,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Products_create"
+                  "$ref": "#/components/schemas/Success200"
                 }
               }
             }
