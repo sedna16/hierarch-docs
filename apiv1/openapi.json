@@ -1084,7 +1084,7 @@
           },
           "can_view_company": {
             "description": "true if role has access",
-            "type": "string"
+            "type": "boolean"
           }
           
         }
