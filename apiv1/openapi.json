@@ -723,8 +723,10 @@
             ],
             "type": "object",
             "properties": {
-              "result": {
-                "type": "string"
+              "id": {
+                "description": "Identification number of the plant",
+                "type": "integer",
+                "format": "int64"
               }
             }
           }
