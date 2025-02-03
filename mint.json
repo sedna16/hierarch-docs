@@ -138,7 +138,9 @@
               "/apiv1/get-product",
               "/apiv1/create-product",
               "/apiv1/edit-product",
-              "/apiv1/delete-product"
+              "/apiv1/delete-product",
+              "/apiv1/query-roles",
+              "/apiv1/get-role"
             ]
         },
         "workflows",
