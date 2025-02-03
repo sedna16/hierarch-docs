@@ -136,7 +136,9 @@
               "/apiv1/get-company",
               "/apiv1/get-products",
               "/apiv1/get-product",
-              "/apiv1/create-product"
+              "/apiv1/create-product",
+              "/apiv1/edit-product",
+              "/apiv1/delete-product"
             ]
         },
         "workflows",
