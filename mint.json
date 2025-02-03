@@ -134,7 +134,7 @@
               "/apiv1/api-token",
               "/apiv1/auth",
               "/apiv1/get-company",
-              "/apiv1/get-products",
+              "/apiv1/query-products",
               "/apiv1/get-product",
               "/apiv1/create-product",
               "/apiv1/edit-product",
