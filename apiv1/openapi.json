@@ -1085,6 +1085,322 @@
           "can_view_company": {
             "description": "true if role has access",
             "type": "boolean"
+          },
+          "can_view_allrole": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_role": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_role": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_role": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_role": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allproduct": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_product": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_product": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_product": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_product": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allconsultation": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_consultation": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_consultation": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_consultation": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_consultation": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allpipeline": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_pipeline": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_pipeline": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_pipeline": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_pipeline": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allclient": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_client": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_client": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_client": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_client": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allticket": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_ticket": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_ticket": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_ticket": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_ticket": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allpersonnel": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_personnel": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_personnel": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_personnel": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_personnel": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allhandbook": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_handbook": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_handbook": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_handbook": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_handbook": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allassignment": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_assignment": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_assignment": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_assignment": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_assignment": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allannouncement": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_announcement": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_announcement": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_announcement": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_announcement": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allmemo": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_memo": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_memo": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_memo": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_memo": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allleave": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_leave": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_leave": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_leave": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_leave": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_notebox": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_notebox": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_notebox": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_notebox": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allreview": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_review": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_review": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_review": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_review": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allform": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_form": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_form": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_form": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_form": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_allworkflow": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_view_workflow": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_create_workflow": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_edit_workflow": {
+            "description": "true if role has access",
+            "type": "boolean"
+          },
+          "can_delete_workflow": {
+            "description": "true if role has access",
+            "type": "boolean"
           }
           
         }
