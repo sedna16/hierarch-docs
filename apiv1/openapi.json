@@ -2277,12 +2277,14 @@
             "type": "string"
           },
           "consultant_ids": {
+            "description": "Consultants id array",
             "type": "array",
             "items": {
               "type": "string"
             }
           },
           "client_ids": {
+            "description": "Clients id array",
             "type": "array",
             "items": {
               "type": "string"
@@ -2310,25 +2312,31 @@
                       "format": "int32"
                     },
                     "title": {
+                      "description": "Assignment title",
                       "type": "string"
                     },
                     "description": {
+                      "description": "Assignment description",
                       "type": "string"
                     },
                     "status": {
+                      "description": "Assignment status",
                       "type": "string"
                     },
                     "remarks": {
+                      "description": "Assignment remarks",
                       "type": "string"
                     },
                     "product": {
                       "type": "object",
                       "properties": {
                         "id": {
+                          "description": "Product ID",
                           "type": "integer",
                           "format": "int32"
                         },
                         "name": {
+                          "description": "Product name",
                           "type": "string"
                         }
                       }
@@ -2337,10 +2345,12 @@
                       "type": "object",
                       "properties": {
                         "id": {
+                          "description": "Pipeline ID",
                           "type": "integer",
                           "format": "int32"
                         },
                         "name": {
+                          "description": "Pipeline Name",
                           "type": "string"
                         }
                       }
@@ -2353,13 +2363,16 @@
                     "type": "object",
                     "properties": {
                       "id": {
+                        "description": "Handbook ID",
                         "type": "integer",
                         "format": "int32"
                       },
                       "title": {
+                        "description": "Handbook title",
                         "type": "string"
                       },
                       "slug": {
+                        "description": "Handbook slug",
                         "type": "string"
                       }
                     }
@@ -2371,16 +2384,20 @@
                     "type": "object",
                     "properties": {
                       "id": {
+                        "description": "Client ID",
                         "type": "integer",
                         "format": "int32"
                       },
                       "first_name": {
+                        "description": "Client first name",
                         "type": "string"
                       },
                       "last_name": {
+                        "description": "Client last name",
                         "type": "string"
                       },
                       "profile_photo": {
+                        "description": "Client profile photo",
                         "type": "string"
                       }
                     }
@@ -2392,16 +2409,20 @@
                     "type": "object",
                     "properties": {
                       "id": {
+                        "description": "Personnel ID",
                         "type": "integer",
                         "format": "int32"
                       },
                       "first_name": {
+                        "description": "Personnel first name",
                         "type": "string"
                       },
                       "last_name": {
+                        "description": "Personnel last name",
                         "type": "string"
                       },
                       "role_name": {
+                        "description": "Personnel role name",
                         "type": "string"
                       }
                     }
@@ -2448,15 +2469,19 @@
                 "format": "int32"
               },
               "title": {
+                "description": "Assignment title",
                 "type": "string"
               },
               "description": {
+                "description": "Assignment description",
                 "type": "string"
               },
               "status": {
+                "description": "Assignment status",
                 "type": "string"
               },
               "remarks": {
+                "description": "Assignment remarks",
                 "type": "string"
               }
             }
@@ -2467,13 +2492,16 @@
               "type": "object",
               "properties": {
                 "id": {
+                  "description": "Handbook ID",
                   "type": "integer",
                   "format": "int32"
                 },
                 "title": {
+                  "description": "Handbook title",
                   "type": "string"
                 },
                 "slug": {
+                  "description": "Handbook url",
                   "type": "string"
                 }
               }
@@ -2485,16 +2513,20 @@
               "type": "object",
               "properties": {
                 "id": {
+                  "description": "Client ID",
                   "type": "integer",
                   "format": "int32"
                 },
                 "first_name": {
+                  "description": "Client first name",
                   "type": "string"
                 },
                 "last_name": {
+                  "description": "Client last name",
                   "type": "string"
                 },
                 "profile_photo": {
+                  "description": "Client profile photo",
                   "type": "string"
                 }
               }
@@ -2506,16 +2538,20 @@
               "type": "object",
               "properties": {
                 "id": {
+                  "description": "Personnel ID",
                   "type": "integer",
                   "format": "int32"
                 },
                 "first_name": {
+                  "description": "Personnel first name",
                   "type": "string"
                 },
                 "last_name": {
+                  "description": "Personnel last name",
                   "type": "string"
                 },
                 "role_name": {
+                  "description": "Personnel role name",
                   "type": "string"
                 }
               }
