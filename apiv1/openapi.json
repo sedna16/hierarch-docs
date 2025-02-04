@@ -1557,7 +1557,7 @@
             "type": "string"
           },
           "currency": {
-            "description": "Currency used in transactions",
+            "description": "Currency used in transactions, e.g. USD",
             "type": "string"
           },
           "logo": {
@@ -2303,7 +2303,7 @@
                     "type": "string"
                   },
                   "currency": {
-                    "description": "USD",
+                    "description": "Currency, e.g. USD",
                     "type": "string"
                   }
                 }
