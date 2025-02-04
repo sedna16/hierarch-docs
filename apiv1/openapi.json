@@ -1216,6 +1216,84 @@
           }
         }
       }
+    },
+    "/assignment/assign/{company_slug}/{assignment_id}/": {
+      "post": {
+        "description": "Assign object to assignment",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "path",
+            "description": "This is your company url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assignment_id",
+            "in": "path",
+            "description": "Assignment ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Assign object to assignment",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Assignment_assign"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error500"
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
 
@@ -2438,7 +2516,6 @@
   
         }
       },
-      
       "Assignment_create": {
         "required": [
           "id"
@@ -2459,7 +2536,24 @@
           },
           "product_id": {
             "description": "Product ID",
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Assignment_assign": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "section": {
+            "description": "Section, e.g. handbooks/clients/personnel",
             "type": "string"
+          },
+          "id": {
+            "type": "integer",
+            "format": "int32"
           }
         }
       },
