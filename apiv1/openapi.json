@@ -1975,13 +1975,7 @@
             "type": "string"
           },
           "consultants": {
-            "type": "array",
-            "items": {
-              "id": {
-                "description": "Consultant ID",
-                "type":  "string"
-              }
-            }
+            "type": "array"
           }
         }
       },
