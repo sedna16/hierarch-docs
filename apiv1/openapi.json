@@ -1979,6 +1979,12 @@
             "items": {
               "type": "string"
             }
+          },
+          "client_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
           }
         }
       },
