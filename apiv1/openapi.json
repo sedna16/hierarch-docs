@@ -2290,6 +2290,7 @@
                 "type": "object",
                 "properties": {
                   "id": {
+                    "description": "Product ID",
                     "type": "integer",
                     "format": "int32"
                   },
@@ -2317,6 +2318,7 @@
             "type": "object",
             "properties": {
               "id": {
+                "description": "Consultant ID",
                 "type": "integer",
                 "format": "int32"
               },
@@ -2342,6 +2344,7 @@
             "type": "object",
             "properties": {
               "id": {
+                "description": "Client ID",
                 "type": "integer",
                 "format": "int32"
               },
@@ -2639,6 +2642,34 @@
               "remarks": {
                 "description": "Assignment remarks",
                 "type": "string"
+              },
+              "product": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Product ID",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "name": {
+                    "description": "Product name",
+                    "type": "string"
+                  }
+                }
+              },
+              "pipeline":  {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Pipeline ID",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "name": {
+                    "description": "Pipeline Name",
+                    "type": "string"
+                  }
+                }
               }
             }
           },
