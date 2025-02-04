@@ -1147,6 +1147,75 @@
           }
         }
       }
+    },
+    "/assignment/create/{company_slug}/": {
+      "post": {
+        "description": "Create new assignment",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "path",
+            "description": "This is your company url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Creates new assignment record",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Assignment_create"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error500"
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
 
@@ -2369,6 +2438,35 @@
   
         }
       },
+      
+      "Assignment_create": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "description": "Assignment title",
+            "type": "string"
+          },
+          "description": {
+            "description": "Assignment description",
+            "type": "string"
+          },
+          "remarks": {
+            "description": "Assignment remarks",
+            "type": "string"
+          },
+          "product_id": {
+            "description": "Product ID",
+            "type": "string"
+          }
+        }
+      },
+
+
+
+
 
 
 
