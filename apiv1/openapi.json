@@ -342,9 +342,9 @@
     },
     "/product/create/{company_slug}/": {
       "post": {
-        "description": "Creates a new plant in the store",
+        "description": "Create new product",
         "requestBody": {
-          "description": "Plant to add to the store",
+          "description": "Creates new product record",
           "content": {
             "application/json": {
               "schema": {
@@ -400,7 +400,7 @@
     },
     "/product/edit/{company_slug}/": {
       "post": {
-        "description": "Creates a new plant in the store",
+        "description": "Edit product information",
         "requestBody": {
           "description": "Plant to add to the store",
           "content": {
@@ -458,7 +458,7 @@
     },
     "/product/delete/{company_slug}/{product_id}/": {
       "get": {
-        "description": "Retrieves single product information",
+        "description": "Delete product",
         "parameters": [
           {
             "name": "company_slug",
@@ -820,8 +820,65 @@
           }
         }
       }
+    },
+    "/consultation/create/{company_slug}/": {
+      "post": {
+        "description": "Create new consultation",
+        "requestBody": {
+          "description": "Creates new product record",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Consultation_create"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error500"
+                }
+              }
+            }
+          }
+        }
+      }
     }
-
 
 
   },
@@ -1725,6 +1782,38 @@
             }
           }
   
+        }
+      },
+      "Consultation_create": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "description": "Consultation title",
+            "type": "string"
+          },
+          "description": {
+            "description": "Consultation description",
+            "type": "string"
+          },
+          "url": {
+            "description": "Description of the consultation",
+            "type": "string"
+          },
+          "location": {
+            "description": "Physical location or online",
+            "type": "string"
+          },
+          "schedule": {
+            "description": "Schedule of the consultation",
+            "type": "string"
+          },
+          "product_id": {
+            "description": "Product ID",
+            "type": "string"
+          }
         }
       },
 
