@@ -343,6 +343,17 @@
     "/product/create/{company_slug}/": {
       "post": {
         "description": "Create new product",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "path",
+            "description": "This is your company url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "description": "Creates new product record",
           "content": {
@@ -844,6 +855,17 @@
     "/consultation/create/{company_slug}/": {
       "post": {
         "description": "Create new consultation",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "path",
+            "description": "This is your company url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "description": "Creates new product record",
           "content": {
