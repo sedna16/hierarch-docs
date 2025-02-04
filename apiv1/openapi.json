@@ -902,6 +902,26 @@
     "/consultation/edit/{company_slug}/{consultation_id}/": {
       "post": {
         "description": "Edit product information",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "path",
+            "description": "This is your company url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "consultation_id",
+            "in": "path",
+            "description": "Consultation ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "description": "Consultation details to edit",
           "content": {
