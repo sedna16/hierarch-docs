@@ -1534,15 +1534,19 @@
                   "format": "int32"
                 },
                 "name": {
+                  "description": "Product name",
                   "type": "string"
                 },
                 "description": {
+                  "description": "Product description",
                   "type": "string"
                 },
                 "last_updated": {
+                  "description": "Product last update date and time",
                   "type": "string"
                 },
                 "datetime": {
+                  "description": "Date and time the product was created",
                   "type": "string"
                 }
               }
@@ -1658,9 +1662,11 @@
                   "format": "int32"
                 },
                 "name": {
+                  "description": "Role name",
                   "type": "string"
                 },
                 "description": {
+                  "description": "Role description",
                   "type": "string"
                 }
               }
@@ -2048,18 +2054,23 @@
                   "format": "int32"
                 },
                 "title": {
+                  "description": "Consultation title",
                   "type": "string"
                 },
                 "schedule": {
+                  "description": "Consultation schedule date and time",
                   "type": "string"
                 },
                 "status": {
+                  "description": "Consultation status",
                   "type": "string"
                 },
                 "last_updated": {
+                  "description": "Consultation last updated date and time",
                   "type": "string"
                 },
                 "datetime": {
+                  "description": "Date and time the consultation was created",
                   "type": "string"
                 }
               }
