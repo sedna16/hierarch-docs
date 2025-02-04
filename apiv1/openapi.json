@@ -1974,12 +1974,10 @@
             "description": "Product ID",
             "type": "string"
           },
-          "consultants": {
+          "consultant_ids": {
             "type": "array",
             "items": {
-              "id": {
-                "type": "string"
-              }
+              "type": "string"
             }
           }
         }
