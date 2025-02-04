@@ -143,7 +143,8 @@
               "/apiv1/get-role",
               "/apiv1/query-consultations",
               "/apiv1/get-consultation",
-              "/apiv1/create-consultation"
+              "/apiv1/create-consultation",
+              "/apiv1/edit-consultation"
             ]
         },
         "workflows",

@@ -398,9 +398,29 @@
         }
       }
     },
-    "/product/edit/{company_slug}/": {
+    "/product/edit/{company_slug}/{product_id}/": {
       "post": {
         "description": "Edit product information",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "path",
+            "description": "This is your company url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "product_id",
+            "in": "path",
+            "description": "Product ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
         "requestBody": {
           "description": "Plant to add to the store",
           "content": {
@@ -830,6 +850,64 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Consultation_create"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error500"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/consultation/edit/{company_slug}/{consultation_id}/": {
+      "post": {
+        "description": "Edit product information",
+        "requestBody": {
+          "description": "Consultation details to edit",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Consultation_edit"
               }
             }
           },
@@ -1681,7 +1759,7 @@
                 "format": "int32"
               },
               "status": {
-                "description": "Status",
+                "description": "Status e.g. open/scheduled/closed",
                 "type": "string"
               },
               "schedule": {
@@ -1808,6 +1886,46 @@
           },
           "schedule": {
             "description": "Schedule of the consultation",
+            "type": "string"
+          },
+          "product_id": {
+            "description": "Product ID",
+            "type": "string"
+          }
+        }
+      },
+      "Consultation_edit": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "status": {
+            "description": "Status e.g. open/scheduled/closed",
+            "type": "string"
+          },
+          "schedule": {
+            "description": "Schedule of the consultation",
+            "type": "string"
+          },
+          "location": {
+            "description": "Physical location or online",
+            "type": "string"
+          },
+          "url": {
+            "description": "URL",
+            "type": "string"
+          },
+          "title": {
+            "description": "Title of the consultation",
+            "type": "string"
+          },
+          "description": {
+            "description": "Description of the consultation",
+            "type": "string"
+          },
+          "notes": {
+            "description": "Internal notes",
             "type": "string"
           },
           "product_id": {
