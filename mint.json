@@ -145,7 +145,8 @@
               "/apiv1/get-consultation",
               "/apiv1/create-consultation",
               "/apiv1/edit-consultation",
-              "/apiv1/query-assignments"
+              "/apiv1/query-assignments",
+              "/apiv1/get-assignment"
             ]
         },
         "workflows",
