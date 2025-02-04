@@ -150,7 +150,8 @@
               "/apiv1/create-assignment",
               "/apiv1/assign-assignment",
               "/apiv1/edit-assignment",
-              "/apiv1/delete-assignment"
+              "/apiv1/delete-assignment",
+              "/apiv1/query-clients"
             ]
         },
         "workflows",

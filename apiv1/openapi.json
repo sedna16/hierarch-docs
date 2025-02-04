@@ -1439,6 +1439,88 @@
           }
         }
       }
+    },
+    "/client/query/{company_slug}/": {
+      "get": {
+        "description": "Retrieves client array",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "path",
+            "description": "This is your company url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "query",
+            "in": "header",
+            "description": "Search term, blank by default",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "header",
+            "description": "Page number, 1 by default",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "order",
+            "in": "header",
+            "description": "Data order - newest / oldest",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Products_loop"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error500"
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
 
@@ -2812,6 +2894,148 @@
             "type": "integer",
             "format": "int32"
           }
+        }
+      },
+      "Clients_loop": {
+        "required": [
+          "slug"
+        ],
+        "type": "object",
+        "properties": {
+          "loop": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "Client ID",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "profile_photo": {
+                  "description": "Client profile photo",
+                  "type": "string"
+                },
+                "status": {
+                  "description": "Client status",
+                  "type": "string"
+                },
+                "first_name": {
+                  "description": "Client first name",
+                  "type": "string"
+                },
+                "last_name": {
+                  "description": "Client last name",
+                  "type": "string"
+                },
+                "email": {
+                  "description": "Client email",
+                  "type": "string"
+                },
+                "phone": {
+                  "description": "Client phone",
+                  "type": "string"
+                },
+                "home_phone": {
+                  "description": "Client home phone",
+                  "type": "string"
+                },
+                "work_phone": {
+                  "description": "Client work phone",
+                  "type": "string"
+                },
+                "country": {
+                  "description": "Country",
+                  "type": "string"
+                },
+                "home_address": {
+                  "description": "Client home address",
+                  "type": "string"
+                },
+                "work_address": {
+                  "description": "Client work address",
+                  "type": "string"
+                },
+                "company_name": {
+                  "description": "Client's company name",
+                  "type": "string"
+                },
+                "company_website": {
+                  "description": "Client's company website",
+                  "type": "string"
+                },
+                "company_address": {
+                  "description": "Client's company address",
+                  "type": "string"
+                },
+                "facebook": {
+                  "description": "Facebook account",
+                  "type": "string"
+                },
+                "instagram": {
+                  "description": "Instagram account",
+                  "type": "string"
+                },
+                "twitter": {
+                  "description": "X/Twitter account",
+                  "type": "string"
+                },
+                "linkedin": {
+                  "description": "Linkedin account",
+                  "type": "string"
+                },
+                "skype": {
+                  "description": "Skype account",
+                  "type": "string"
+                },
+                "whatsapp": {
+                  "description": "Whatsapp account",
+                  "type": "string"
+                },
+                "msteams": {
+                  "description": "MS Teams account",
+                  "type": "string"
+                },
+                "slack": {
+                  "description": "Slack account",
+                  "type": "string"
+                },
+                "discord": {
+                  "description": "Discord account",
+                  "type": "string"
+                },
+                "last_update": {
+                  "description": "Date and time the client was last updated",
+                  "type": "string"
+                },
+                "datetime": {
+                  "description": "Date and time the client was created",
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "current_page": {
+            "description": "Current data page",
+            "type": "string"
+          },
+          "max_page": {
+            "description": "Maximum number of pages",
+            "type": "string"
+          },
+          "start_count": {
+            "description": "Starting data count",
+            "type": "string"
+          },
+          "end_count": {
+            "description": "Ending data count",
+            "type": "string"
+          },
+          "max_count": {
+            "description": "Maximum number of data",
+            "type": "string"
+          }
+          
         }
       },
 
