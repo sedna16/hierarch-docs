@@ -1294,6 +1294,84 @@
           }
         }
       }
+    },
+    "/assignment/edit/{company_slug}/{assignment_id}/": {
+      "post": {
+        "description": "Edit product information",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "path",
+            "description": "This is your company url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "assignment_id",
+            "in": "path",
+            "description": "Assignment ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Assignment details to edit",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Assignment_edit"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error500"
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
 
@@ -2608,6 +2686,31 @@
           },
           "id": {
             "description": "Assignment ID",
+            "type": "integer",
+            "format": "int32"
+          }
+        }
+      },
+      "Assignment_edit": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "description": "Assignment title",
+            "type": "string"
+          },
+          "description": {
+            "description": "Assignment description",
+            "type": "string"
+          },
+          "remarks": {
+            "description": "Assignment remarks",
+            "type": "string"
+          },
+          "product_id": {
+            "description": "Product ID",
             "type": "integer",
             "format": "int32"
           }
