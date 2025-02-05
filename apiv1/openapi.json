@@ -3112,39 +3112,110 @@
         "type": "object",
         "properties": {
           "id": {
-            "description": "Product ID",
+            "description": "Client ID",
             "type": "integer",
             "format": "int32"
           },
-          "name": {
-            "description": "Product name",
+          "profile_photo": {
+            "description": "Client profile photo",
             "type": "string"
           },
-          "description": {
-            "description": "Product description",
+          "status": {
+            "description": "Client status",
             "type": "string"
           },
-          "what_you_get": {
-            "description": "List of things/values the client will get",
+          "first_name": {
+            "description": "Client first name",
             "type": "string"
           },
-          "price": {
-            "description": "Product price, e.g. 1000",
+          "last_name": {
+            "description": "Client last name",
             "type": "string"
           },
-          "currency": {
-            "description": "Currency, e.g. USD",
+          "email": {
+            "description": "Client email",
+            "type": "string"
+          },
+          "phone": {
+            "description": "Client phone",
+            "type": "string"
+          },
+          "home_phone": {
+            "description": "Client home phone",
+            "type": "string"
+          },
+          "work_phone": {
+            "description": "Client work phone",
+            "type": "string"
+          },
+          "country": {
+            "description": "Country",
+            "type": "string"
+          },
+          "home_address": {
+            "description": "Client home address",
+            "type": "string"
+          },
+          "work_address": {
+            "description": "Client work address",
+            "type": "string"
+          },
+          "company_name": {
+            "description": "Client's company name",
+            "type": "string"
+          },
+          "company_website": {
+            "description": "Client's company website",
+            "type": "string"
+          },
+          "company_address": {
+            "description": "Client's company address",
+            "type": "string"
+          },
+          "facebook": {
+            "description": "Facebook account",
+            "type": "string"
+          },
+          "instagram": {
+            "description": "Instagram account",
+            "type": "string"
+          },
+          "twitter": {
+            "description": "X/Twitter account",
+            "type": "string"
+          },
+          "linkedin": {
+            "description": "Linkedin account",
+            "type": "string"
+          },
+          "skype": {
+            "description": "Skype account",
+            "type": "string"
+          },
+          "whatsapp": {
+            "description": "Whatsapp account",
+            "type": "string"
+          },
+          "msteams": {
+            "description": "MS Teams account",
+            "type": "string"
+          },
+          "slack": {
+            "description": "Slack account",
+            "type": "string"
+          },
+          "discord": {
+            "description": "Discord account",
+            "type": "string"
+          },
+          "last_update": {
+            "description": "Date and time the client was last updated",
             "type": "string"
           },
           "datetime": {
-            "description": "Date and time the product was created",
-            "type": "string"
-          },
-          "last_updated": {
-            "description": "Date and time the product was last updated",
+            "description": "Date and time the client was created",
             "type": "string"
           }
-          
         }
       },
 
