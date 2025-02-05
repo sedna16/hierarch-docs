@@ -1875,6 +1875,73 @@
           }
         }
       }
+    },
+    "/personnel/get/{company_slug}/{personnel_id}/": {
+      "get": {
+        "description": "Retrieves single client",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "path",
+            "description": "This is your company url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "description": "Client ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Personnel_single"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error500"
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
 
@@ -3622,11 +3689,11 @@
                   "type": "string"
                 },
                 "last_update": {
-                  "description": "Date and time the client was last updated",
+                  "description": "Date and time the personnel was last updated",
                   "type": "string"
                 },
                 "datetime": {
-                  "description": "Date and time the client was created",
+                  "description": "Date and time the personnel was created",
                   "type": "string"
                 }
               }
@@ -3653,6 +3720,99 @@
             "type": "string"
           }
           
+        }
+      },
+      "Personnel_single": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Personnel ID",
+            "type": "integer",
+            "format": "int32"
+          },
+          "role_name": {
+            "description": "Personnel role name",
+            "type": "string"
+          },
+          "profile_photo": {
+            "description": "Personnel profile photo",
+            "type": "string"
+          },
+          "status": {
+            "description": "Personnel status",
+            "type": "string"
+          },
+          "first_name": {
+            "description": "Personnel first name",
+            "type": "string"
+          },
+          "last_name": {
+            "description": "Personnel last name",
+            "type": "string"
+          },
+          "email": {
+            "description": "Personnel email",
+            "type": "string"
+          },
+          "phone": {
+            "description": "Personnel phone",
+            "type": "string"
+          },
+          "country": {
+            "description": "Country",
+            "type": "string"
+          },
+          "home_address": {
+            "description": "Personnel home address",
+            "type": "string"
+          },
+          "facebook": {
+            "description": "Facebook account",
+            "type": "string"
+          },
+          "instagram": {
+            "description": "Instagram account",
+            "type": "string"
+          },
+          "twitter": {
+            "description": "X/Twitter account",
+            "type": "string"
+          },
+          "linkedin": {
+            "description": "Linkedin account",
+            "type": "string"
+          },
+          "skype": {
+            "description": "Skype account",
+            "type": "string"
+          },
+          "whatsapp": {
+            "description": "Whatsapp account",
+            "type": "string"
+          },
+          "msteams": {
+            "description": "MS Teams account",
+            "type": "string"
+          },
+          "slack": {
+            "description": "Slack account",
+            "type": "string"
+          },
+          "discord": {
+            "description": "Discord account",
+            "type": "string"
+          },
+          "last_update": {
+            "description": "Date and time the personnel was last updated",
+            "type": "string"
+          },
+          "datetime": {
+            "description": "Date and time the Personnel was created",
+            "type": "string"
+          }
         }
       },
 
