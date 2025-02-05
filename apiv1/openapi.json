@@ -1521,6 +1521,73 @@
           }
         }
       }
+    },
+    "/client/get/{company_slug}/{client_id}/": {
+      "get": {
+        "description": "Retrieves single client",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "path",
+            "description": "This is your company url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "client_id",
+            "in": "path",
+            "description": "Client ID",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client_single"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error500"
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
 
@@ -3033,6 +3100,48 @@
           },
           "max_count": {
             "description": "Maximum number of data",
+            "type": "string"
+          }
+          
+        }
+      },
+      "Client_single": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "description": "Product ID",
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "description": "Product name",
+            "type": "string"
+          },
+          "description": {
+            "description": "Product description",
+            "type": "string"
+          },
+          "what_you_get": {
+            "description": "List of things/values the client will get",
+            "type": "string"
+          },
+          "price": {
+            "description": "Product price, e.g. 1000",
+            "type": "string"
+          },
+          "currency": {
+            "description": "Currency, e.g. USD",
+            "type": "string"
+          },
+          "datetime": {
+            "description": "Date and time the product was created",
+            "type": "string"
+          },
+          "last_updated": {
+            "description": "Date and time the product was last updated",
             "type": "string"
           }
           
