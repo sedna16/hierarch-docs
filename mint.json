@@ -153,7 +153,8 @@
               "/apiv1/delete-assignment",
               "/apiv1/query-clients",
               "/apiv1/get-client",
-              "/apiv1/create-client"
+              "/apiv1/create-client",
+              "/apiv1/edit-client"
             ]
         },
         "workflows",
