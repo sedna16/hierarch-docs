@@ -1588,6 +1588,75 @@
           }
         }
       }
+    },
+    "/client/create/{company_slug}/": {
+      "post": {
+        "description": "Create new product",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "path",
+            "description": "This is your company url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Creates new client",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Client_create"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error500"
+                }
+              }
+            }
+          }
+        }
+      }
     }
 
 
@@ -3214,6 +3283,34 @@
           },
           "datetime": {
             "description": "Date and time the client was created",
+            "type": "string"
+          }
+        }
+      },
+      "Client_create": {
+        "required": [
+          "id"
+        ],
+        "type": "object",
+        "properties": {
+          "first_name": {
+            "description": "Client first name",
+            "type": "string"
+          },
+          "last_name": {
+            "description": "Client last name",
+            "type": "string"
+          },
+          "email": {
+            "description": "Client email",
+            "type": "string"
+          },
+          "phone": {
+            "description": "Client phone number",
+            "type": "string"
+          },
+          "country": {
+            "description": "Country",
             "type": "string"
           }
         }
