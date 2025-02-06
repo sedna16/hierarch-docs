@@ -128,7 +128,7 @@
             ]
         },
         {
-            "group": "API Documentation",
+            "group": "API Docs",
             "pages": [
               "api",
               "/api/api-token",
