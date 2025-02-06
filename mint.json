@@ -174,7 +174,8 @@
                 "/workflows/triggers/pipeline-changed",
                 "/workflows/triggers/assignment-created",
                 "/workflows/triggers/assignment-edited",
-                "/workflows/triggers/client-created"
+                "/workflows/triggers/client-created",
+                "/workflows/triggers/client-edited"
               ]
             },
             {
