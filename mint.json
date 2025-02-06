@@ -136,7 +136,7 @@
               {
                 "group": "v1",
                 "pages": [
-                  "/api/v1/get-company",
+                  "/v1/get-company",
                   "/api/v1/query-products",
                   "/api/v1/get-product",
                   "/api/v1/create-product",
