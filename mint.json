@@ -159,7 +159,8 @@
               "/apiv1/query-personnel",
               "/apiv1/get-personnel",
               "/apiv1/create-personnel",
-              "/apiv1/edit-personnel"
+              "/apiv1/edit-personnel",
+              "/apiv1/delete-personnel"
             ]
         },
         "workflows",
