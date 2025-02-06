@@ -178,7 +178,8 @@
                 "/workflows/triggers/client-edited",
                 "/workflows/triggers/personnel-created",
                 "/workflows/triggers/personnel-edited",
-                "/workflows/triggers/consultation-created"
+                "/workflows/triggers/consultation-created",
+                "/workflows/triggers/review-created"
               ]
             },
             {
