@@ -31,8 +31,8 @@
       "url": "api-reference"
     },
     {
-      "name": "Changelogs",
-      "url": "/changelog"
+      "name": "API Docs",
+      "url": "/api/v1"
     }
   ],
   "anchors": [
@@ -136,7 +136,7 @@
               {
                 "group": "v1",
                 "pages": [
-                  "/api/v1/get-company",
+                  "/v1/get-company",
                   "/v1/query-products",
                   "/v1/get-product",
                   "/v1/create-product",
