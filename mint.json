@@ -175,7 +175,9 @@
                 "/workflows/triggers/assignment-created",
                 "/workflows/triggers/assignment-edited",
                 "/workflows/triggers/client-created",
-                "/workflows/triggers/client-edited"
+                "/workflows/triggers/client-edited",
+                "/workflows/triggers/personnel-created",
+                "/workflows/triggers/personnel-edited"
               ]
             },
             {
