@@ -166,7 +166,19 @@
         {
           "group": "Workflows",
           "pages": [
-            "workflows"
+            "workflows",
+            {
+              "group": "Triggers",
+              "pages": [
+                "/workflows/triggers/webhooks"
+              ]
+            },
+            {
+              "group": "Modules",
+              "pages": [
+                "/workflows/modules/create-assignment"
+              ]
+            }
           ]
         },
         "resources",
