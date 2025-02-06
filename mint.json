@@ -32,7 +32,7 @@
     },
     {
       "name": "API Docs",
-      "url": "/api/v1"
+      "url": "apiv1"
     }
   ],
   "anchors": [
@@ -128,7 +128,7 @@
             ]
         },
         {
-            "group": "API Docs",
+            "group": "API Documentation",
             "pages": [
               "api",
               "/apiv1/api-token",
