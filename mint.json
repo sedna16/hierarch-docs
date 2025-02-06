@@ -157,7 +157,8 @@
               "/apiv1/edit-client",
               "/apiv1/delete-client",
               "/apiv1/query-personnel",
-              "/apiv1/get-personnel"
+              "/apiv1/get-personnel",
+              "/apiv1/create-personnel"
             ]
         },
         "workflows",
