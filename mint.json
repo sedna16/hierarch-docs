@@ -163,7 +163,12 @@
               "/apiv1/delete-personnel" 
             ]
         },
-        "workflows",
+        {
+          "group": "Workflows",
+          "pages": [
+            "workflows"
+          ]
+        },
         "resources",
         "faqs",
         
