@@ -1899,9 +1899,9 @@
             }
           },
           {
-            "name": "client_id",
+            "name": "personnel_id",
             "in": "path",
-            "description": "Client ID",
+            "description": "Personnel ID",
             "required": true,
             "schema": {
               "type": "string"
