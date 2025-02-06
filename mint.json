@@ -177,7 +177,8 @@
                 "/workflows/triggers/client-created",
                 "/workflows/triggers/client-edited",
                 "/workflows/triggers/personnel-created",
-                "/workflows/triggers/personnel-edited"
+                "/workflows/triggers/personnel-edited",
+                "/workflows/triggers/consultation-created"
               ]
             },
             {
