@@ -1660,7 +1660,7 @@
     },
     "/client/edit/{company_slug}/{client_id}/": {
       "post": {
-        "description": "Create new product",
+        "description": "Edit client record",
         "parameters": [
           {
             "name": "company_slug",
@@ -1673,11 +1673,11 @@
           }
         ],
         "requestBody": {
-          "description": "Creates new client",
+          "description": "Client details",
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Client_create"
+                "$ref": "#/components/schemas/Client_single"
               }
             }
           },
@@ -1963,6 +1963,75 @@
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/Personnel_create"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "OK Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Success200"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Missing Parameters",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error400"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Not Found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error404"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Internal Server Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error500"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/personnel/edit/{company_slug}/{client_id}/": {
+      "post": {
+        "description": "Edit personnel record",
+        "parameters": [
+          {
+            "name": "company_slug",
+            "in": "path",
+            "description": "This is your company url",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Client details",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Personnel_single"
               }
             }
           },
