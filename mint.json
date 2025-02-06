@@ -172,7 +172,8 @@
               "pages": [
                 "/workflows/triggers/webhooks",
                 "/workflows/triggers/pipeline-changed",
-                "/workflows/triggers/assignment-created"
+                "/workflows/triggers/assignment-created",
+                "/workflows/triggers/assignment-edited"
               ]
             },
             {
