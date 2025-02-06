@@ -27,7 +27,7 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
+      "name": "API Reference22",
       "url": "api-reference"
     },
     {
@@ -136,7 +136,7 @@
               {
                 "group": "v1",
                 "pages": [
-                  "/api/v1/get-company",
+                  "/v1/get-company",
                   "/v1/query-products",
                   "/v1/get-product",
                   "/v1/create-product",
