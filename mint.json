@@ -208,7 +208,8 @@
                 "/workflows/modules/edit-task",
                 "/workflows/modules/invite-client",
                 "/workflows/modules/create-client",
-                "/workflows/modules/search-clients"
+                "/workflows/modules/search-clients",
+                "/workflows/modules/get-all-clients"
               ]
             }
           ]
