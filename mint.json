@@ -209,7 +209,8 @@
                 "/workflows/modules/invite-client",
                 "/workflows/modules/create-client",
                 "/workflows/modules/search-clients",
-                "/workflows/modules/get-all-clients"
+                "/workflows/modules/get-all-clients",
+                "/workflows/modules/get-client"
               ]
             }
           ]
