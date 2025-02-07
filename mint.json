@@ -216,7 +216,8 @@
                 "/workflows/modules/invite-personnel",
                 "/workflows/modules/create-personnel",
                 "/workflows/modules/search-personnel",
-                "/workflows/modules/get-all-personnel"
+                "/workflows/modules/get-all-personnel",
+                "/workflows/modules/get-personnel"
               ]
             }
           ]
