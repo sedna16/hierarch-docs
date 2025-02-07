@@ -198,7 +198,8 @@
                 "/workflows/modules/get-all-assignments",
                 "/workflows/modules/get-assignment",
                 "/workflows/modules/edit-assignment",
-                "/workflows/modules/delete-assignment"
+                "/workflows/modules/delete-assignment",
+                "/workflows/modules/assign-handbook"
               ]
             }
           ]
