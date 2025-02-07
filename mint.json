@@ -184,7 +184,8 @@
                 "/workflows/triggers/ticket-edited",
                 "/workflows/triggers/leave-approved",
                 "/workflows/triggers/leave-created",
-                "/workflows/triggers/leave-denied"
+                "/workflows/triggers/leave-denied",
+                "/workflows/triggers/memo-created"
               ]
             },
             {
