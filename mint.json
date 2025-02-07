@@ -212,7 +212,8 @@
                 "/workflows/modules/get-all-clients",
                 "/workflows/modules/get-client",
                 "/workflows/modules/edit-client",
-                "/workflows/modules/delete-client"
+                "/workflows/modules/delete-client",
+                "/workflows/modules/invite-personnel"
               ]
             }
           ]
