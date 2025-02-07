@@ -186,7 +186,8 @@
                 "/workflows/triggers/leave-created",
                 "/workflows/triggers/leave-denied",
                 "/workflows/triggers/memo-created",
-                "/workflows/triggers/announcement-created"
+                "/workflows/triggers/announcement-created",
+                "/workflows/triggers/form-submitted"
               ]
             },
             {
