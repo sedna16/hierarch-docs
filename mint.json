@@ -202,7 +202,8 @@
                 "/workflows/modules/assign-handbook",
                 "/workflows/modules/assign-client",
                 "/workflows/modules/assign-personnel",
-                "/workflows/modules/create-task"
+                "/workflows/modules/create-task",
+                "/workflows/modules/get-all-tasks"
               ]
             }
           ]
