@@ -201,7 +201,8 @@
                 "/workflows/modules/delete-assignment",
                 "/workflows/modules/assign-handbook",
                 "/workflows/modules/assign-client",
-                "/workflows/modules/assign-personnel"
+                "/workflows/modules/assign-personnel",
+                "/workflows/modules/create-task"
               ]
             }
           ]
