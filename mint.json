@@ -199,7 +199,8 @@
                 "/workflows/modules/get-assignment",
                 "/workflows/modules/edit-assignment",
                 "/workflows/modules/delete-assignment",
-                "/workflows/modules/assign-handbook"
+                "/workflows/modules/assign-handbook",
+                "/workflows/modules/assign-client"
               ]
             }
           ]
