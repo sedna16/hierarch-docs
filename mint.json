@@ -219,7 +219,8 @@
                 "/workflows/modules/get-all-personnel",
                 "/workflows/modules/get-personnel",
                 "/workflows/modules/edit-personnel",
-                "/workflows/modules/delete-personnel"
+                "/workflows/modules/delete-personnel",
+                "/workflows/modules/get-all-inquiry"
               ]
             }
           ]
