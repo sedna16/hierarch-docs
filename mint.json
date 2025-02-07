@@ -205,7 +205,8 @@
                 "/workflows/modules/create-task",
                 "/workflows/modules/get-all-tasks",
                 "/workflows/modules/get-task",
-                "/workflows/modules/edit-task"
+                "/workflows/modules/edit-task",
+                "/workflows/modules/invite-client"
               ]
             }
           ]
