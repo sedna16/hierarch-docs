@@ -194,7 +194,8 @@
               "group": "Modules",
               "pages": [
                 "/workflows/modules/create-assignment",
-                "/workflows/modules/search-assignments"
+                "/workflows/modules/search-assignments",
+                "/workflows/modules/get-all-assignments"
               ]
             }
           ]
