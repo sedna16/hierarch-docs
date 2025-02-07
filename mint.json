@@ -193,7 +193,8 @@
             {
               "group": "Modules",
               "pages": [
-                "/workflows/modules/create-assignment"
+                "/workflows/modules/create-assignment",
+                "/workflows/modules/search-assignments"
               ]
             }
           ]
