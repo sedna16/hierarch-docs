@@ -214,7 +214,8 @@
                 "/workflows/modules/edit-client",
                 "/workflows/modules/delete-client",
                 "/workflows/modules/invite-personnel",
-                "/workflows/modules/create-personnel"
+                "/workflows/modules/create-personnel",
+                "/workflows/modules/search-personnel"
               ]
             }
           ]
