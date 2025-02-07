@@ -181,7 +181,8 @@
                 "/workflows/triggers/consultation-created",
                 "/workflows/triggers/review-created",
                 "/workflows/triggers/ticket-created",
-                "/workflows/triggers/ticket-edited"
+                "/workflows/triggers/ticket-edited",
+                "/workflows/triggers/leave-approved"
               ]
             },
             {
