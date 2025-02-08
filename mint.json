@@ -233,7 +233,8 @@
                 "/workflows/modules/get-all-review-comments",
                 "/workflows/modules/search-tickets",
                 "/workflows/modules/get-all-tickets",
-                "/workflows/modules/get-ticket"
+                "/workflows/modules/get-ticket",
+                "/workflows/modules/update-ticket"
               ]
             }
           ]
