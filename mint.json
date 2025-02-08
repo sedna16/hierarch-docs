@@ -248,7 +248,8 @@
                 "/workflows/modules/delete-memo",
                 "/workflows/modules/create-announcement",
                 "/workflows/modules/get-all-announcements",
-                "/workflows/modules/get-announcement"
+                "/workflows/modules/get-announcement",
+                "/workflows/modules/get-all-form-submissions"
               ]
             }
           ]
