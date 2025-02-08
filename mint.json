@@ -245,7 +245,8 @@
                 "/workflows/modules/get-all-memos",
                 "/workflows/modules/get-memo",
                 "/workflows/modules/edit-memo",
-                "/workflows/modules/delete-memo"
+                "/workflows/modules/delete-memo",
+                "/workflows/modules/create-announcement"
               ]
             }
           ]
