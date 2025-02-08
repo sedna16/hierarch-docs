@@ -236,7 +236,8 @@
                 "/workflows/modules/get-ticket",
                 "/workflows/modules/update-ticket",
                 "/workflows/modules/create-leave",
-                "/workflows/modules/get-all-leaves"
+                "/workflows/modules/get-all-leaves",
+                "/workflows/modules/get-leave"
               ]
             }
           ]
