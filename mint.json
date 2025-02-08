@@ -238,7 +238,8 @@
                 "/workflows/modules/create-leave",
                 "/workflows/modules/get-all-leaves",
                 "/workflows/modules/get-leave",
-                "/workflows/modules/approve-leave"
+                "/workflows/modules/approve-leave",
+                "/workflows/modules/deny-leave"
               ]
             }
           ]
