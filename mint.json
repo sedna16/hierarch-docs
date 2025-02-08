@@ -222,7 +222,8 @@
                 "/workflows/modules/delete-personnel",
                 "/workflows/modules/get-all-inquiry",
                 "/workflows/modules/get-inquiry",
-                "/workflows/modules/create-consultation"
+                "/workflows/modules/create-consultation",
+                "/workflows/modules/search-consultations"
               ]
             }
           ]
