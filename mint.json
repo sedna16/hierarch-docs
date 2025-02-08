@@ -227,7 +227,8 @@
                 "/workflows/modules/get-all-consultations",
                 "/workflows/modules/get-consultation",
                 "/workflows/modules/edit-consultation",
-                "/workflows/modules/delete-consultation"
+                "/workflows/modules/delete-consultation",
+                "/workflows/modules/get-all-reviews"
               ]
             }
           ]
