@@ -223,7 +223,8 @@
                 "/workflows/modules/get-all-inquiry",
                 "/workflows/modules/get-inquiry",
                 "/workflows/modules/create-consultation",
-                "/workflows/modules/search-consultations"
+                "/workflows/modules/search-consultations",
+                "/workflows/modules/get-all-consultations"
               ]
             }
           ]
