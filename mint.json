@@ -243,7 +243,8 @@
                 "/workflows/modules/create-memo",
                 "/workflows/modules/search-memos",
                 "/workflows/modules/get-all-memos",
-                "/workflows/modules/get-memo"
+                "/workflows/modules/get-memo",
+                "/workflows/modules/edit-memo"
               ]
             }
           ]
