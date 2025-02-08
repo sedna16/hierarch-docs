@@ -250,7 +250,8 @@
                 "/workflows/modules/get-all-announcements",
                 "/workflows/modules/get-announcement",
                 "/workflows/modules/get-all-form-submissions",
-                "/workflows/modules/search-form-submissions"
+                "/workflows/modules/search-form-submissions",
+                "/workflows/modules/get-all-forms"
               ]
             }
           ]
