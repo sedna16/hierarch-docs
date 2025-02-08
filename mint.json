@@ -230,7 +230,8 @@
                 "/workflows/modules/delete-consultation",
                 "/workflows/modules/get-all-reviews",
                 "/workflows/modules/get-review",
-                "/workflows/modules/get-all-review-comments"
+                "/workflows/modules/get-all-review-comments",
+                "/workflows/modules/search-tickets"
               ]
             }
           ]
