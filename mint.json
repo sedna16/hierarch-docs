@@ -244,7 +244,8 @@
                 "/workflows/modules/search-memos",
                 "/workflows/modules/get-all-memos",
                 "/workflows/modules/get-memo",
-                "/workflows/modules/edit-memo"
+                "/workflows/modules/edit-memo",
+                "/workflows/modules/delete-memo"
               ]
             }
           ]
