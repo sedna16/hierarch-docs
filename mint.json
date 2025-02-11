@@ -31,8 +31,12 @@
   },
   "tabs": [
     {
-      "name": "API Documentation",
-      "url": "/apiv1/introduction"
+      "anchor": "API References",
+      "pages": [
+        "api-reference/get",
+        "api-reference/post",
+        "api-reference/delete"
+      ]
     }
   ],
   "anchors": [],
