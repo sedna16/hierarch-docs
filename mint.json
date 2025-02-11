@@ -31,10 +31,6 @@
   },
   "tabs": [
     {
-      "name": "API Reference",
-      "url": "api-reference"
-    },
-    {
       "name": "API Documentation",
       "url": "apiv1"
     }
@@ -247,20 +243,6 @@
         "/apiv1/create-personnel",
         "/apiv1/edit-personnel",
         "/apiv1/delete-personnel" 
-      ]
-    },
-    {
-      "group": "API Documentation",
-      "pages": [
-        "api-reference/introduction"
-      ]
-    },
-    {
-      "group": "Endpoint Examples",
-      "pages": [
-        "api-reference/endpoint/get",
-        "api-reference/endpoint/create",
-        "api-reference/endpoint/delete"
       ]
     }
   ],
