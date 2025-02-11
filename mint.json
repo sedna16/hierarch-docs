@@ -31,12 +31,8 @@
   },
   "tabs": [
     {
-      "anchor": "API References",
-      "pages": [
-        "api-reference/get",
-        "api-reference/post",
-        "api-reference/delete"
-      ]
+      "name": "API Reference",
+      "url": "api-reference"
     }
   ],
   "anchors": [],
@@ -247,6 +243,20 @@
         "/apiv1/create-personnel",
         "/apiv1/edit-personnel",
         "/apiv1/delete-personnel" 
+      ]
+    },
+    {
+      "group": "API Documentation",
+      "pages": [
+        "api-reference/introduction"
+      ]
+    },
+    {
+      "group": "Endpoint Examples",
+      "pages": [
+        "api-reference/endpoint/get",
+        "api-reference/endpoint/create",
+        "api-reference/endpoint/delete"
       ]
     }
   ],
