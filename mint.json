@@ -213,6 +213,7 @@
       "group": "API Documentation",
       "pages": [
         "api",
+        "/apiv1/introduction",
         "/apiv1/api-token",
         "/apiv1/auth",
         "/apiv1/get-company",
