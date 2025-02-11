@@ -119,7 +119,8 @@
               "/integrations/brevo"
             ]
         },
-        "resources",
+        "forms",
+        "payments",
         "faqs"
       ]
     },
