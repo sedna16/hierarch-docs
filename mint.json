@@ -33,6 +33,10 @@
     {
       "name": "API Documentation",
       "url": "apiv1"
+    },
+    {
+      "name": "Workflows",
+      "url": "workflows"
     }
   ],
   "anchors": [],
