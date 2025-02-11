@@ -37,6 +37,10 @@
     {
       "name": "Workflows",
       "url": "workflows"
+    },
+    {
+      "name": "Changelogs",
+      "url": "changelogs"
     }
   ],
   "anchors": [],
