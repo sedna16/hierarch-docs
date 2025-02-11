@@ -119,7 +119,16 @@
               "/integrations/brevo"
             ]
         },
-        "forms",
+        {
+          "group": "Forms",
+          "pages": [
+            "/forms/forms",
+            "/forms/form-builder",
+            "/forms/fields",
+            "/forms/templates",
+            "/forms/workflow"
+          ]
+        },
         "payments",
         "faqs"
       ]
