@@ -127,7 +127,7 @@
     {
       "group": "API Documentation",
       "pages": [
-        "/apiv1/introduction",
+        "/apiv1/api",
         "/apiv1/api-token",
         "/apiv1/auth",
         "/apiv1/get-company",
