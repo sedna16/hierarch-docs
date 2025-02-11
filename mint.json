@@ -31,7 +31,7 @@
   },
   "tabs": [
     {
-      "name": "API Docs",
+      "name": "API Documentation",
       "url": "/apiv1/introduction"
     }
   ],
@@ -212,7 +212,6 @@
     {
       "group": "API Documentation",
       "pages": [
-        "api",
         "/apiv1/introduction",
         "/apiv1/api-token",
         "/apiv1/auth",
