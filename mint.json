@@ -32,7 +32,7 @@
   "tabs": [
     {
       "name": "API Docs",
-      "url": "api"
+      "url": "/apiv1/introduction"
     }
   ],
   "anchors": [],
