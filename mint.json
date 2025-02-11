@@ -122,7 +122,7 @@
     {
       "group": "API Documentation",
       "pages": [
-        "/apiv1/introduction",
+        "/api",
         "/apiv1/api-token",
         "/apiv1/auth",
         "/apiv1/get-company",
