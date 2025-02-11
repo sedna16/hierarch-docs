@@ -120,8 +120,7 @@
             ]
         },
         "resources",
-        "faqs",
-        "changelogs"
+        "faqs"
       ]
     },
     {
@@ -252,6 +251,12 @@
             "/workflows/modules/get-form"
           ]
         }
+      ]
+    },
+    {
+      "group": "Changelogs",
+      "pages": [
+        "changelogs"
       ]
     }
   ],
