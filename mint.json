@@ -39,6 +39,10 @@
       "url": "apiv1"
     },
     {
+      "name": "API Doc",
+      "url": "api-docs"
+    },
+    {
       "name": "Workflows",
       "url": "workflows"
     },
