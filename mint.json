@@ -126,7 +126,7 @@
             "/forms/form-builder",
             "/forms/fields",
             "/forms/templates",
-            "/forms/workflow"
+            "/forms/integrations"
           ]
         },
         "payments",
