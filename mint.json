@@ -36,6 +36,7 @@
   "tabs": [
     {
       "name": "API",
+      "openapi": "/apiv1/openapi.json",
       "url": "apiv1"
     },
     {
