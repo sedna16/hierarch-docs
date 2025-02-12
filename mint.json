@@ -143,48 +143,6 @@
         {
           "group": "v1",
           "pages": [
-            "/apiv1/api",
-            "/apiv1/api-token",
-            "/apiv1/auth",
-            "/apiv1/get-company",
-            "/apiv1/query-products",
-            "/apiv1/get-product",
-            "/apiv1/create-product",
-            "/apiv1/edit-product",
-            "/apiv1/delete-product",
-            "/apiv1/query-roles",
-            "/apiv1/get-role",
-            "/apiv1/query-consultations",
-            "/apiv1/get-consultation",
-            "/apiv1/create-consultation",
-            "/apiv1/edit-consultation",
-            "/apiv1/query-assignments",
-            "/apiv1/get-assignment",
-            "/apiv1/create-assignment",
-            "/apiv1/assign-assignment",
-            "/apiv1/edit-assignment",
-            "/apiv1/delete-assignment",
-            "/apiv1/query-clients",
-            "/apiv1/get-client",
-            "/apiv1/create-client",
-            "/apiv1/edit-client",
-            "/apiv1/delete-client",
-            "/apiv1/query-personnel",
-            "/apiv1/get-personnel",
-            "/apiv1/create-personnel",
-            "/apiv1/edit-personnel",
-            "/apiv1/delete-personnel" 
-          ]
-        }
-        
-      ]
-    },
-    {
-      "group": "API Documentation New",
-      "pages": [
-        {
-          "group": "v1",
-          "pages": [
             "/api-docs/v1/api",
             "/api-docs/v1/api-token",
             "/api-docs/v1/api-auth",
