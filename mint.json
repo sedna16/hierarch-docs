@@ -182,7 +182,8 @@
     {
       "group": "API Test",
       "pages": [
-        "/api/v1/api"
+        "/api/v1/api",
+        "/api/v1/api-token"
       ]
     },
     {
