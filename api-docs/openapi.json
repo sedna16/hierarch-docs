@@ -1,0 +1,4148 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+      "title": "OpenAPI Plant Store",
+      "description": "A sample API that uses a plant store as an example to demonstrate features in the OpenAPI specification",
+      "license": {
+        "name": "MIT"
+      },
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "https://api.hierarch.io/v1"
+      }
+    ],
+    "security": [
+      {
+        "api_key": []
+      }
+    ],
+    "paths": {
+      "/plants": {
+        "get": {
+          "description": "Returns all plants from the system that the user has access to",
+          "parameters": [
+            {
+              "name": "limit",
+              "in": "query",
+              "description": "The maximum number of results to return",
+              "schema": {
+                "type": "integer",
+                "format": "int32"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Plant response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": {
+                      "$ref": "#/components/schemas/Plant"
+                    }
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Unexpected error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "post": {
+          "description": "Creates a new plant in the store",
+          "requestBody": {
+            "description": "Plant to add to the store",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NewPlant"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "plant response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Plant"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "unexpected error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/plants/{id}": {
+        "delete": {
+          "description": "Deletes a single plant based on the ID supplied",
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "ID of plant to delete",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+          ],
+          "responses": {
+            "204": {
+              "description": "Plant deleted",
+              "content": {}
+            },
+            "400": {
+              "description": "unexpected error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+  
+  
+  
+  
+      "/v1/company/get/{company_slug}/": {
+        "get": {
+          "description": "Retrieves company information",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Company"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/product/query/{company_slug}/": {
+        "get": {
+          "description": "Retrieves product array",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "query",
+              "in": "header",
+              "description": "Search term, blank by default",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "header",
+              "description": "Page number, 1 by default",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "order",
+              "in": "header",
+              "description": "Data order - newest / oldest",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Products_loop"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/product/get/{company_slug}/{product_id}/": {
+        "get": {
+          "description": "Retrieves single product information",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "product_id",
+              "in": "path",
+              "description": "Product ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Products_single"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/product/create/{company_slug}/": {
+        "post": {
+          "description": "Create new product",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Creates new product record",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Products_create"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/product/edit/{company_slug}/{product_id}/": {
+        "post": {
+          "description": "Edit product information",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "product_id",
+              "in": "path",
+              "description": "Product ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Plant to add to the store",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Products_create"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/product/delete/{company_slug}/{product_id}/": {
+        "get": {
+          "description": "Delete product",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "product_id",
+              "in": "path",
+              "description": "Product ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/role/query/{company_slug}/": {
+        "get": {
+          "description": "Retrieves roles array",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "query",
+              "in": "header",
+              "description": "Search term, blank by default",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "header",
+              "description": "Page number, 1 by default",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "order",
+              "in": "header",
+              "description": "Data order - newest / oldest",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Roles_loop"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/role/get/{company_slug}/{role_id}/": {
+        "get": {
+          "description": "Retrieves single role",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "role_id",
+              "in": "path",
+              "description": "Role ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Roles_single"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/consultation/query/{company_slug}/": {
+        "get": {
+          "description": "Retrieves product array",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "query",
+              "in": "header",
+              "description": "Search term, blank by default",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "header",
+              "description": "Page number, 1 by default",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "order",
+              "in": "header",
+              "description": "Data order - newest / oldest",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Consultations_loop"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/consultation/get/{company_slug}/{consultation_id}/": {
+        "get": {
+          "description": "Retrieves single consultation",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "consultation_id",
+              "in": "path",
+              "description": "Consultation ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Consultation_single"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/consultation/create/{company_slug}/": {
+        "post": {
+          "description": "Create new consultation",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Creates new product record",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Consultation_create"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/consultation/edit/{company_slug}/{consultation_id}/": {
+        "post": {
+          "description": "Edit product information",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "consultation_id",
+              "in": "path",
+              "description": "Consultation ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Consultation details to edit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Consultation_edit"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/assignment/query/{company_slug}/": {
+        "get": {
+          "description": "Retrieves assignment array",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "query",
+              "in": "header",
+              "description": "Search term, blank by default",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "header",
+              "description": "Page number, 1 by default",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "order",
+              "in": "header",
+              "description": "Data order - newest / oldest",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Assignments_loop"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/assignment/get/{company_slug}/{assignment_id}/": {
+        "get": {
+          "description": "Retrieves single assignment record",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "assignment_id",
+              "in": "path",
+              "description": "Assignment ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Assignment_single"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/assignment/create/{company_slug}/": {
+        "post": {
+          "description": "Create new assignment",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Creates new assignment record",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Assignment_create"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/assignment/assign/{company_slug}/{assignment_id}/": {
+        "post": {
+          "description": "Assign object to assignment",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "assignment_id",
+              "in": "path",
+              "description": "Assignment ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Assign object to assignment",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Assignment_assign"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/assignment/edit/{company_slug}/{assignment_id}/": {
+        "post": {
+          "description": "Edit product information",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "assignment_id",
+              "in": "path",
+              "description": "Assignment ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Assignment details to edit",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Assignment_edit"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/assignment/delete/{company_slug}/{assignment_id}/": {
+        "get": {
+          "description": "Delete product",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "assignment_id",
+              "in": "path",
+              "description": "Assignment ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/client/query/{company_slug}/": {
+        "get": {
+          "description": "Retrieves client array",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "query",
+              "in": "header",
+              "description": "Search term, blank by default",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "header",
+              "description": "Page number, 1 by default",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "order",
+              "in": "header",
+              "description": "Data order - newest / oldest",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Products_loop"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/client/get/{company_slug}/{client_id}/": {
+        "get": {
+          "description": "Retrieves single client",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "client_id",
+              "in": "path",
+              "description": "Client ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Client_single"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/client/create/{company_slug}/": {
+        "post": {
+          "description": "Create new client",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Creates new client",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client_create"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/client/edit/{company_slug}/{client_id}/": {
+        "post": {
+          "description": "Edit client record",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "client_id",
+              "in": "path",
+              "description": "Client ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Client details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Client_single"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/client/delete/{company_slug}/{client_id}/": {
+        "get": {
+          "description": "Delete product",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "client_id",
+              "in": "path",
+              "description": "Client ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/personnel/query/{company_slug}/": {
+        "get": {
+          "description": "Retrieves personnel array",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "query",
+              "in": "header",
+              "description": "Search term, blank by default",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "page",
+              "in": "header",
+              "description": "Page number, 1 by default",
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "order",
+              "in": "header",
+              "description": "Data order - newest / oldest",
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Personnel_loop"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/personnel/get/{company_slug}/{personnel_id}/": {
+        "get": {
+          "description": "Retrieves single client",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "personnel_id",
+              "in": "path",
+              "description": "Personnel ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Personnel_single"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/personnel/create/{company_slug}/": {
+        "post": {
+          "description": "Create new personnel",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Creates new personnel",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Personnel_create"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/personnel/edit/{company_slug}/{personnel_id}/": {
+        "post": {
+          "description": "Edit personnel record",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "personnel_id",
+              "in": "path",
+              "description": "Personnel ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "requestBody": {
+            "description": "Personnel details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Personnel_single"
+                }
+              }
+            },
+            "required": true
+          },
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/v1/personnel/delete/{company_slug}/{personnel_id}/": {
+        "get": {
+          "description": "Delete product",
+          "parameters": [
+            {
+              "name": "company_slug",
+              "in": "path",
+              "description": "This is your company url",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            },
+            {
+              "name": "personnel_id",
+              "in": "path",
+              "description": "Personnel ID",
+              "required": true,
+              "schema": {
+                "type": "string"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "OK Response",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Success200"
+                  }
+                }
+              }
+            },
+            "400": {
+              "description": "Missing Parameters",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error400"
+                  }
+                }
+              }
+            },
+            "404": {
+              "description": "Not Found",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error404"
+                  }
+                }
+              }
+            },
+            "500": {
+              "description": "Internal Server Error",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/Error500"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+  
+  
+    },
+    "components": {
+      "schemas": {
+        "Plant": {
+          "required": [
+            "slug"
+          ],
+          "type": "object",
+          "properties": {
+            "slug": {
+              "description": "The company url",
+              "type": "string"
+            },
+            "name": {
+              "description": "The name of the company",
+              "type": "string"
+            }
+          }
+        },
+        "NewPlant": {
+          "allOf": [
+            {
+              "$ref": "#/components/schemas/Plant"
+            },
+            {
+              "required": [
+                "id"
+              ],
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "Identification number of the plant",
+                  "type": "integer",
+                  "format": "int64"
+                }
+              }
+            }
+          ]
+        },
+        "Error": {
+          "required": [
+            "error",
+            "message"
+          ],
+          "type": "object",
+          "properties": {
+            "error": {
+              "type": "integer",
+              "format": "int32"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        },
+  
+        "Company": {
+          "required": [
+            "slug"
+          ],
+          "type": "object",
+          "properties": {
+            "slug": {
+              "description": "The company url",
+              "type": "string"
+            },
+            "name": {
+              "description": "The name of the company",
+              "type": "string"
+            },
+            "email": {
+              "description": "The email of the owner",
+              "type": "string"
+            },
+            "url": {
+              "description": "Company website",
+              "type": "string"
+            },
+            "description": {
+              "description": "Company description",
+              "type": "string"
+            },
+            "slogan": {
+              "description": "Company slogan",
+              "type": "string"
+            },
+            "country": {
+              "description": "Country where the company is based",
+              "type": "string"
+            },
+            "address": {
+              "description": "Complete company address",
+              "type": "string"
+            },
+            "state_region": {
+              "description": "State / Region",
+              "type": "string"
+            },
+            "postcode": {
+              "description": "Postal code",
+              "type": "string"
+            },
+            "sector": {
+              "description": "Business sector",
+              "type": "string"
+            },
+            "industry": {
+              "description": "Industry that the company operates",
+              "type": "string"
+            },
+            "currency": {
+              "description": "Currency used in transactions, e.g. USD",
+              "type": "string"
+            },
+            "logo": {
+              "description": "Company logo url",
+              "type": "string"
+            },
+            "banner": {
+              "description": "Company banner url",
+              "type": "string"
+            },
+            "thumbnail": {
+              "description": "Auto-generated - Company thumbnail url",
+              "type": "string"
+            },
+            "datetime": {
+              "description": "Date and time the company was created",
+              "type": "string"
+            },
+            "skype": {
+              "description": "Company skype account",
+              "type": "string"
+            },
+            "slack": {
+              "description": "Company slack account",
+              "type": "string"
+            },
+            "whatsapp": {
+              "description": "Company whatsapp account",
+              "type": "string"
+            },
+            "msteams": {
+              "description": "Company msteams account",
+              "type": "string"
+            },
+            "discord": {
+              "description": "Company discord account",
+              "type": "string"
+            },
+            "linkedin": {
+              "description": "Company linkedin account",
+              "type": "string"
+            },
+            "github": {
+              "description": "Company github account",
+              "type": "string"
+            },
+            "facebook": {
+              "description": "Company facebook account",
+              "type": "string"
+            },
+            "instagram": {
+              "description": "Company instagram account",
+              "type": "string"
+            },
+            "twitter": {
+              "description": "Company X/twitter account",
+              "type": "string"
+            },
+            "pinterest": {
+              "description": "Company pinterest account",
+              "type": "string"
+            },
+            "business_hour_start": {
+              "description": "Start time for company operations",
+              "type": "string"
+            },
+            "business_hour_end": {
+              "description": "Closing time for company operations",
+              "type": "string"
+            },
+            "timezone": {
+              "description": "Timezone",
+              "type": "string"
+            },
+            "sunday": {
+              "description": "true if company operates on Sunday",
+              "type": "string"
+            },
+            "monday": {
+              "description": "true if company operates on Monday",
+              "type": "string"
+            },
+            "tuesday": {
+              "description": "true if company operates on Tuesday",
+              "type": "string"
+            },
+            "wednesday": {
+              "description": "true if company operates on Wednesday",
+              "type": "string"
+            },
+            "thusrday": {
+              "description": "true if company operates on Thursday",
+              "type": "string"
+            },
+            "friday": {
+              "description": "true if company operates on Friday",
+              "type": "string"
+            },
+            "saturday": {
+              "description": "true if company operates on Saturday",
+              "type": "string"
+            }
+          }
+        },
+        "Products_loop": {
+          "required": [
+            "slug"
+          ],
+          "type": "object",
+          "properties": {
+            "loop": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Product ID",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "name": {
+                    "description": "Product name",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "Product description",
+                    "type": "string"
+                  },
+                  "last_updated": {
+                    "description": "Product last update date and time",
+                    "type": "string"
+                  },
+                  "datetime": {
+                    "description": "Date and time the product was created",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "current_page": {
+              "description": "Current data page",
+              "type": "string"
+            },
+            "max_page": {
+              "description": "Maximum number of pages",
+              "type": "string"
+            },
+            "start_count": {
+              "description": "Starting data count",
+              "type": "string"
+            },
+            "end_count": {
+              "description": "Ending data count",
+              "type": "string"
+            },
+            "max_count": {
+              "description": "Maximum number of data",
+              "type": "string"
+            }
+            
+          }
+        },
+        "Products_single": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "Product ID",
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "description": "Product name",
+              "type": "string"
+            },
+            "description": {
+              "description": "Product description",
+              "type": "string"
+            },
+            "what_you_get": {
+              "description": "List of things/values the client will get",
+              "type": "string"
+            },
+            "price": {
+              "description": "Product price, e.g. 1000",
+              "type": "string"
+            },
+            "currency": {
+              "description": "Currency, e.g. USD",
+              "type": "string"
+            },
+            "datetime": {
+              "description": "Date and time the product was created",
+              "type": "string"
+            },
+            "last_updated": {
+              "description": "Date and time the product was last updated",
+              "type": "string"
+            }
+            
+          }
+        },
+        "Products_create": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "name": {
+              "description": "Product name",
+              "type": "string"
+            },
+            "description": {
+              "description": "Product description",
+              "type": "string"
+            },
+            "what_you_get": {
+              "description": "Describe what the buyer will be getting",
+              "type": "string"
+            },
+            "price": {
+              "description": "Product price",
+              "type": "string"
+            },
+            "currency": {
+              "description": "Currency, e.g. USD",
+              "type": "string"
+            }
+          }
+        },
+        "Roles_loop": {
+          "required": [
+            "slug"
+          ],
+          "type": "object",
+          "properties": {
+            "loop": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Role ID",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "name": {
+                    "description": "Role name",
+                    "type": "string"
+                  },
+                  "description": {
+                    "description": "Role description",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "current_page": {
+              "description": "Current data page",
+              "type": "string"
+            },
+            "max_page": {
+              "description": "Maximum number of pages",
+              "type": "string"
+            },
+            "start_count": {
+              "description": "Starting data count",
+              "type": "string"
+            },
+            "end_count": {
+              "description": "Ending data count",
+              "type": "string"
+            },
+            "max_count": {
+              "description": "Maximum number of data",
+              "type": "string"
+            }
+            
+          }
+        },
+        "Roles_single": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "Role ID",
+              "type": "integer",
+              "format": "int32"
+            },
+            "name": {
+              "description": "Role name",
+              "type": "string"
+            },
+            "description": {
+              "description": "Role description",
+              "type": "string"
+            },
+            "can_view_company": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allrole": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_role": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_role": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_role": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_role": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allproduct": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_product": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_product": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_product": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_product": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allconsultation": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_consultation": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_consultation": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_consultation": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_consultation": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allpipeline": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_pipeline": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_pipeline": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_pipeline": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_pipeline": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allclient": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_client": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_client": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_client": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_client": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allticket": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_ticket": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_ticket": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_ticket": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_ticket": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allpersonnel": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_personnel": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_personnel": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_personnel": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_personnel": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allhandbook": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_handbook": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_handbook": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_handbook": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_handbook": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allassignment": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_assignment": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_assignment": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_assignment": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_assignment": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allannouncement": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_announcement": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_announcement": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_announcement": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_announcement": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allmemo": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_memo": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_memo": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_memo": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_memo": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allleave": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_leave": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_leave": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_leave": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_leave": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_notebox": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_notebox": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_notebox": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_notebox": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allreview": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_review": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_review": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_review": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_review": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allform": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_form": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_form": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_form": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_form": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_allworkflow": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_view_workflow": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_create_workflow": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_edit_workflow": {
+              "description": "true if role has access",
+              "type": "boolean"
+            },
+            "can_delete_workflow": {
+              "description": "true if role has access",
+              "type": "boolean"
+            }
+            
+          }
+        },
+        "Consultations_loop": {
+          "required": [
+            "slug"
+          ],
+          "type": "object",
+          "properties": {
+            "loop": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Consultation ID",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "title": {
+                    "description": "Consultation title",
+                    "type": "string"
+                  },
+                  "schedule": {
+                    "description": "Consultation schedule date and time",
+                    "type": "string"
+                  },
+                  "status": {
+                    "description": "Consultation status",
+                    "type": "string"
+                  },
+                  "last_updated": {
+                    "description": "Consultation last updated date and time",
+                    "type": "string"
+                  },
+                  "datetime": {
+                    "description": "Date and time the consultation was created",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "current_page": {
+              "description": "Current data page",
+              "type": "string"
+            },
+            "max_page": {
+              "description": "Maximum number of pages",
+              "type": "string"
+            },
+            "start_count": {
+              "description": "Starting data count",
+              "type": "string"
+            },
+            "end_count": {
+              "description": "Ending data count",
+              "type": "string"
+            },
+            "max_count": {
+              "description": "Maximum number of data",
+              "type": "string"
+            }
+            
+          }
+        },
+        "Consultation_single": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "consultation": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "Consultation ID",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "status": {
+                  "description": "Status e.g. open/scheduled/closed",
+                  "type": "string"
+                },
+                "schedule": {
+                  "description": "Schedule of the consultation",
+                  "type": "string"
+                },
+                "location": {
+                  "description": "Physical location or online",
+                  "type": "string"
+                },
+                "url": {
+                  "description": "URL",
+                  "type": "string"
+                },
+                "title": {
+                  "description": "Title of the consultation",
+                  "type": "string"
+                },
+                "description": {
+                  "description": "Description of the consultation",
+                  "type": "string"
+                },
+                "notes": {
+                  "description": "Internal notes",
+                  "type": "string"
+                },
+                "product": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "Product ID",
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "name": {
+                      "description": "Product name",
+                      "type": "string"
+                    },
+                    "price": {
+                      "description": "Product price",
+                      "type": "string"
+                    },
+                    "currency": {
+                      "description": "Currency, e.g. USD",
+                      "type": "string"
+                    }
+                  }
+                },
+                "datetime": {
+                  "description": "Date and time the consultation was created",
+                  "type": "string"
+                }
+              }
+            },
+            "consultants": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "Consultant ID",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "first_name": {
+                  "description": "First name of consultant",
+                  "type": "string"
+                },
+                "last_name": {
+                  "description": "Last name of consultant",
+                  "type": "string"
+                },
+                "profile_photo": {
+                  "description": "URL of the profile photo",
+                  "type": "string"
+                },
+                "role_name": {
+                  "description": "Role of the consultant within the company",
+                  "type": "string"
+                }
+              }
+            },
+            "clients": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "Client ID",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "first_name": {
+                  "description": "First name of consultant",
+                  "type": "string"
+                },
+                "last_name": {
+                  "description": "Last name of consultant",
+                  "type": "string"
+                },
+                "profile_photo": {
+                  "description": "URL of the profile photo",
+                  "type": "string"
+                },
+              }
+            }
+    
+          }
+        },
+        "Consultation_create": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "title": {
+              "description": "Consultation title",
+              "type": "string"
+            },
+            "description": {
+              "description": "Consultation description",
+              "type": "string"
+            },
+            "url": {
+              "description": "Description of the consultation",
+              "type": "string"
+            },
+            "location": {
+              "description": "Physical location or online",
+              "type": "string"
+            },
+            "schedule": {
+              "description": "Schedule of the consultation",
+              "type": "string"
+            },
+            "product_id": {
+              "description": "Product ID",
+              "type": "string"
+            }
+          }
+        },
+        "Consultation_edit": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "status": {
+              "description": "Status e.g. open/scheduled/closed",
+              "type": "string"
+            },
+            "schedule": {
+              "description": "Schedule of the consultation",
+              "type": "string"
+            },
+            "location": {
+              "description": "Physical location or online",
+              "type": "string"
+            },
+            "url": {
+              "description": "URL",
+              "type": "string"
+            },
+            "title": {
+              "description": "Title of the consultation",
+              "type": "string"
+            },
+            "description": {
+              "description": "Description of the consultation",
+              "type": "string"
+            },
+            "notes": {
+              "description": "Internal notes",
+              "type": "string"
+            },
+            "product_id": {
+              "description": "Product ID",
+              "type": "string"
+            },
+            "consultant_ids": {
+              "description": "Consultants id array",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            "client_ids": {
+              "description": "Clients id array",
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "Assignments_loop": {
+          "required": [
+            "slug"
+          ],
+          "type": "object",
+          "properties": {
+            "loop": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "assignment": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "description": "Assignment ID",
+                        "type": "integer",
+                        "format": "int32"
+                      },
+                      "title": {
+                        "description": "Assignment title",
+                        "type": "string"
+                      },
+                      "description": {
+                        "description": "Assignment description",
+                        "type": "string"
+                      },
+                      "status": {
+                        "description": "Assignment status",
+                        "type": "string"
+                      },
+                      "remarks": {
+                        "description": "Assignment remarks",
+                        "type": "string"
+                      },
+                      "product": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "description": "Product ID",
+                            "type": "integer",
+                            "format": "int32"
+                          },
+                          "name": {
+                            "description": "Product name",
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "pipeline":  {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "description": "Pipeline ID",
+                            "type": "integer",
+                            "format": "int32"
+                          },
+                          "name": {
+                            "description": "Pipeline Name",
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "handbooks": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "description": "Handbook ID",
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "title": {
+                          "description": "Handbook title",
+                          "type": "string"
+                        },
+                        "slug": {
+                          "description": "Handbook slug",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "clients": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "description": "Client ID",
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "first_name": {
+                          "description": "Client first name",
+                          "type": "string"
+                        },
+                        "last_name": {
+                          "description": "Client last name",
+                          "type": "string"
+                        },
+                        "profile_photo": {
+                          "description": "Client profile photo",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  },
+                  "personnel": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "description": "Personnel ID",
+                          "type": "integer",
+                          "format": "int32"
+                        },
+                        "first_name": {
+                          "description": "Personnel first name",
+                          "type": "string"
+                        },
+                        "last_name": {
+                          "description": "Personnel last name",
+                          "type": "string"
+                        },
+                        "role_name": {
+                          "description": "Personnel role name",
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "current_page": {
+              "description": "Current data page",
+              "type": "string"
+            },
+            "max_page": {
+              "description": "Maximum number of pages",
+              "type": "string"
+            },
+            "start_count": {
+              "description": "Starting data count",
+              "type": "string"
+            },
+            "end_count": {
+              "description": "Ending data count",
+              "type": "string"
+            },
+            "max_count": {
+              "description": "Maximum number of data",
+              "type": "string"
+            }
+            
+          }
+        },
+        "Assignment_single": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "assignment": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "description": "Assignment ID",
+                  "type": "integer",
+                  "format": "int32"
+                },
+                "title": {
+                  "description": "Assignment title",
+                  "type": "string"
+                },
+                "description": {
+                  "description": "Assignment description",
+                  "type": "string"
+                },
+                "status": {
+                  "description": "Assignment status",
+                  "type": "string"
+                },
+                "remarks": {
+                  "description": "Assignment remarks",
+                  "type": "string"
+                },
+                "product": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "Product ID",
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "name": {
+                      "description": "Product name",
+                      "type": "string"
+                    }
+                  }
+                },
+                "pipeline":  {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "description": "Pipeline ID",
+                      "type": "integer",
+                      "format": "int32"
+                    },
+                    "name": {
+                      "description": "Pipeline Name",
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            "handbooks": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Handbook ID",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "title": {
+                    "description": "Handbook title",
+                    "type": "string"
+                  },
+                  "slug": {
+                    "description": "Handbook url",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "clients": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Client ID",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "first_name": {
+                    "description": "Client first name",
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "description": "Client last name",
+                    "type": "string"
+                  },
+                  "profile_photo": {
+                    "description": "Client profile photo",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "personnel": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Personnel ID",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "first_name": {
+                    "description": "Personnel first name",
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "description": "Personnel last name",
+                    "type": "string"
+                  },
+                  "role_name": {
+                    "description": "Personnel role name",
+                    "type": "string"
+                  }
+                }
+              }
+            }
+    
+          }
+        },
+        "Assignment_create": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "title": {
+              "description": "Assignment title",
+              "type": "string"
+            },
+            "description": {
+              "description": "Assignment description",
+              "type": "string"
+            },
+            "remarks": {
+              "description": "Assignment remarks",
+              "type": "string"
+            },
+            "product_id": {
+              "description": "Product ID",
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "Assignment_assign": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "section": {
+              "description": "Section, e.g. handbooks/clients/personnel",
+              "type": "string"
+            },
+            "id": {
+              "description": "Assignment ID",
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "Assignment_edit": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "title": {
+              "description": "Assignment title",
+              "type": "string"
+            },
+            "description": {
+              "description": "Assignment description",
+              "type": "string"
+            },
+            "remarks": {
+              "description": "Assignment remarks",
+              "type": "string"
+            },
+            "product_id": {
+              "description": "Product ID",
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        },
+        "Clients_loop": {
+          "required": [
+            "slug"
+          ],
+          "type": "object",
+          "properties": {
+            "loop": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Client ID",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "profile_photo": {
+                    "description": "Client profile photo",
+                    "type": "string"
+                  },
+                  "status": {
+                    "description": "Client status",
+                    "type": "string"
+                  },
+                  "first_name": {
+                    "description": "Client first name",
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "description": "Client last name",
+                    "type": "string"
+                  },
+                  "email": {
+                    "description": "Client email",
+                    "type": "string"
+                  },
+                  "phone": {
+                    "description": "Client phone",
+                    "type": "string"
+                  },
+                  "home_phone": {
+                    "description": "Client home phone",
+                    "type": "string"
+                  },
+                  "work_phone": {
+                    "description": "Client work phone",
+                    "type": "string"
+                  },
+                  "country": {
+                    "description": "Country",
+                    "type": "string"
+                  },
+                  "home_address": {
+                    "description": "Client home address",
+                    "type": "string"
+                  },
+                  "work_address": {
+                    "description": "Client work address",
+                    "type": "string"
+                  },
+                  "company_name": {
+                    "description": "Client's company name",
+                    "type": "string"
+                  },
+                  "company_website": {
+                    "description": "Client's company website",
+                    "type": "string"
+                  },
+                  "company_address": {
+                    "description": "Client's company address",
+                    "type": "string"
+                  },
+                  "facebook": {
+                    "description": "Facebook account",
+                    "type": "string"
+                  },
+                  "instagram": {
+                    "description": "Instagram account",
+                    "type": "string"
+                  },
+                  "twitter": {
+                    "description": "X/Twitter account",
+                    "type": "string"
+                  },
+                  "linkedin": {
+                    "description": "Linkedin account",
+                    "type": "string"
+                  },
+                  "skype": {
+                    "description": "Skype account",
+                    "type": "string"
+                  },
+                  "whatsapp": {
+                    "description": "Whatsapp account",
+                    "type": "string"
+                  },
+                  "msteams": {
+                    "description": "MS Teams account",
+                    "type": "string"
+                  },
+                  "slack": {
+                    "description": "Slack account",
+                    "type": "string"
+                  },
+                  "discord": {
+                    "description": "Discord account",
+                    "type": "string"
+                  },
+                  "last_update": {
+                    "description": "Date and time the client was last updated",
+                    "type": "string"
+                  },
+                  "datetime": {
+                    "description": "Date and time the client was created",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "current_page": {
+              "description": "Current data page",
+              "type": "string"
+            },
+            "max_page": {
+              "description": "Maximum number of pages",
+              "type": "string"
+            },
+            "start_count": {
+              "description": "Starting data count",
+              "type": "string"
+            },
+            "end_count": {
+              "description": "Ending data count",
+              "type": "string"
+            },
+            "max_count": {
+              "description": "Maximum number of data",
+              "type": "string"
+            }
+            
+          }
+        },
+        "Client_single": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "Client ID",
+              "type": "integer",
+              "format": "int32"
+            },
+            "profile_photo": {
+              "description": "Client profile photo",
+              "type": "string"
+            },
+            "status": {
+              "description": "Client status",
+              "type": "string"
+            },
+            "first_name": {
+              "description": "Client first name",
+              "type": "string"
+            },
+            "last_name": {
+              "description": "Client last name",
+              "type": "string"
+            },
+            "email": {
+              "description": "Client email",
+              "type": "string"
+            },
+            "phone": {
+              "description": "Client phone",
+              "type": "string"
+            },
+            "home_phone": {
+              "description": "Client home phone",
+              "type": "string"
+            },
+            "work_phone": {
+              "description": "Client work phone",
+              "type": "string"
+            },
+            "country": {
+              "description": "Country",
+              "type": "string"
+            },
+            "home_address": {
+              "description": "Client home address",
+              "type": "string"
+            },
+            "work_address": {
+              "description": "Client work address",
+              "type": "string"
+            },
+            "company_name": {
+              "description": "Client's company name",
+              "type": "string"
+            },
+            "company_website": {
+              "description": "Client's company website",
+              "type": "string"
+            },
+            "company_address": {
+              "description": "Client's company address",
+              "type": "string"
+            },
+            "facebook": {
+              "description": "Facebook account",
+              "type": "string"
+            },
+            "instagram": {
+              "description": "Instagram account",
+              "type": "string"
+            },
+            "twitter": {
+              "description": "X/Twitter account",
+              "type": "string"
+            },
+            "linkedin": {
+              "description": "Linkedin account",
+              "type": "string"
+            },
+            "skype": {
+              "description": "Skype account",
+              "type": "string"
+            },
+            "whatsapp": {
+              "description": "Whatsapp account",
+              "type": "string"
+            },
+            "msteams": {
+              "description": "MS Teams account",
+              "type": "string"
+            },
+            "slack": {
+              "description": "Slack account",
+              "type": "string"
+            },
+            "discord": {
+              "description": "Discord account",
+              "type": "string"
+            },
+            "last_update": {
+              "description": "Date and time the client was last updated",
+              "type": "string"
+            },
+            "datetime": {
+              "description": "Date and time the client was created",
+              "type": "string"
+            }
+          }
+        },
+        "Client_create": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "first_name": {
+              "description": "Client first name",
+              "type": "string"
+            },
+            "last_name": {
+              "description": "Client last name",
+              "type": "string"
+            },
+            "email": {
+              "description": "Client email",
+              "type": "string"
+            },
+            "phone": {
+              "description": "Client phone number",
+              "type": "string"
+            },
+            "country": {
+              "description": "Country",
+              "type": "string"
+            }
+          }
+        },
+        "Personnel_loop": {
+          "required": [
+            "slug"
+          ],
+          "type": "object",
+          "properties": {
+            "loop": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "description": "Personnel ID",
+                    "type": "integer",
+                    "format": "int32"
+                  },
+                  "role_name": {
+                    "description": "Personnel role name",
+                    "type": "string"
+                  },
+                  "profile_photo": {
+                    "description": "Personnel profile photo",
+                    "type": "string"
+                  },
+                  "status": {
+                    "description": "Personnel status",
+                    "type": "string"
+                  },
+                  "first_name": {
+                    "description": "Personnel first name",
+                    "type": "string"
+                  },
+                  "last_name": {
+                    "description": "Personnel last name",
+                    "type": "string"
+                  },
+                  "email": {
+                    "description": "Personnel email",
+                    "type": "string"
+                  },
+                  "phone": {
+                    "description": "Personnel phone",
+                    "type": "string"
+                  },
+                  "country": {
+                    "description": "Country",
+                    "type": "string"
+                  },
+                  "home_address": {
+                    "description": "Personnel home address",
+                    "type": "string"
+                  },
+                  "facebook": {
+                    "description": "Facebook account",
+                    "type": "string"
+                  },
+                  "instagram": {
+                    "description": "Instagram account",
+                    "type": "string"
+                  },
+                  "twitter": {
+                    "description": "X/Twitter account",
+                    "type": "string"
+                  },
+                  "linkedin": {
+                    "description": "Linkedin account",
+                    "type": "string"
+                  },
+                  "skype": {
+                    "description": "Skype account",
+                    "type": "string"
+                  },
+                  "whatsapp": {
+                    "description": "Whatsapp account",
+                    "type": "string"
+                  },
+                  "msteams": {
+                    "description": "MS Teams account",
+                    "type": "string"
+                  },
+                  "slack": {
+                    "description": "Slack account",
+                    "type": "string"
+                  },
+                  "discord": {
+                    "description": "Discord account",
+                    "type": "string"
+                  },
+                  "last_update": {
+                    "description": "Date and time the personnel was last updated",
+                    "type": "string"
+                  },
+                  "datetime": {
+                    "description": "Date and time the personnel was created",
+                    "type": "string"
+                  }
+                }
+              }
+            },
+            "current_page": {
+              "description": "Current data page",
+              "type": "string"
+            },
+            "max_page": {
+              "description": "Maximum number of pages",
+              "type": "string"
+            },
+            "start_count": {
+              "description": "Starting data count",
+              "type": "string"
+            },
+            "end_count": {
+              "description": "Ending data count",
+              "type": "string"
+            },
+            "max_count": {
+              "description": "Maximum number of data",
+              "type": "string"
+            }
+            
+          }
+        },
+        "Personnel_single": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "Personnel ID",
+              "type": "integer",
+              "format": "int32"
+            },
+            "role_name": {
+              "description": "Personnel role name",
+              "type": "string"
+            },
+            "profile_photo": {
+              "description": "Personnel profile photo",
+              "type": "string"
+            },
+            "status": {
+              "description": "Personnel status",
+              "type": "string"
+            },
+            "first_name": {
+              "description": "Personnel first name",
+              "type": "string"
+            },
+            "last_name": {
+              "description": "Personnel last name",
+              "type": "string"
+            },
+            "email": {
+              "description": "Personnel email",
+              "type": "string"
+            },
+            "phone": {
+              "description": "Personnel phone",
+              "type": "string"
+            },
+            "country": {
+              "description": "Country",
+              "type": "string"
+            },
+            "home_address": {
+              "description": "Personnel home address",
+              "type": "string"
+            },
+            "facebook": {
+              "description": "Facebook account",
+              "type": "string"
+            },
+            "instagram": {
+              "description": "Instagram account",
+              "type": "string"
+            },
+            "twitter": {
+              "description": "X/Twitter account",
+              "type": "string"
+            },
+            "linkedin": {
+              "description": "Linkedin account",
+              "type": "string"
+            },
+            "skype": {
+              "description": "Skype account",
+              "type": "string"
+            },
+            "whatsapp": {
+              "description": "Whatsapp account",
+              "type": "string"
+            },
+            "msteams": {
+              "description": "MS Teams account",
+              "type": "string"
+            },
+            "slack": {
+              "description": "Slack account",
+              "type": "string"
+            },
+            "discord": {
+              "description": "Discord account",
+              "type": "string"
+            },
+            "last_update": {
+              "description": "Date and time the personnel was last updated",
+              "type": "string"
+            },
+            "datetime": {
+              "description": "Date and time the Personnel was created",
+              "type": "string"
+            }
+          }
+        },
+        "Personnel_create": {
+          "required": [
+            "id"
+          ],
+          "type": "object",
+          "properties": {
+            "role": {
+              "description": "Role ID",
+              "type": "string"
+            },
+            "first_name": {
+              "description": "Personnel first name",
+              "type": "string"
+            },
+            "last_name": {
+              "description": "Personnel last name",
+              "type": "string"
+            },
+            "email": {
+              "description": "Personnel email",
+              "type": "string"
+            },
+            "phone": {
+              "description": "Personnel phone number",
+              "type": "string"
+            },
+            "country": {
+              "description": "Country",
+              "type": "string"
+            }
+          }
+        },
+  
+  
+  
+  
+  
+  
+  
+        "Success200": {
+          "required": [
+            "result"
+          ],
+          "type": "object",
+          "properties": {
+            "result": {
+              "type": "string"
+            }
+          }
+        },
+        "Error400": {
+          "required": [
+            "result"
+          ],
+          "type": "object",
+          "properties": {
+            "result": {
+              "type": "string"
+            }
+          }
+        },
+        "Error404": {
+          "required": [
+            "result"
+          ],
+          "type": "object",
+          "properties": {
+            "result": {
+              "type": "string"
+            }
+          }
+        },
+        "Error500": {
+          "required": [
+            "result"
+          ],
+          "type": "object",
+          "properties": {
+            "result": {
+              "type": "string"
+            }
+          }
+        },
+        "Error_nested_sample": {
+          "required": [
+            "result"
+          ],
+          "type": "object",
+          "properties": {
+            "result": {
+              "type": "object",
+              "properties":{
+                "hey": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+  
+      },
+      "securitySchemes": {
+        "api_key": {
+          "type": "apiKey",
+          "description": "API token provided to your company",
+          "name": "token",
+          "in": "header"
+        }
+      }
+      
+    }
+  }
