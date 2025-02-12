@@ -1217,7 +1217,7 @@
           }
         }
       },
-      "/assignmentv1v1v1/assign/{company_slug}/{assignment_id}/": {
+      "/assignmentv1/assign/{company_slug}/{assignment_id}/": {
         "post": {
           "description": "Assign object to assignment",
           "parameters": [
