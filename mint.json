@@ -36,10 +36,6 @@
   "tabs": [
     {
       "name": "API",
-      "url": "apiv1"
-    },
-    {
-      "name": "API Doc",
       "url": "api-docs"
     },
     {

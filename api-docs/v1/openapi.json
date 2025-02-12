@@ -10,7 +10,7 @@
     },
     "servers": [
       {
-        "url": "https://api.hierarch.io/v1"
+        "url": "https://api.hierarch.io"
       }
     ],
     "security": [
