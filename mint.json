@@ -183,7 +183,8 @@
       "group": "API Test",
       "pages": [
         "/api-docs/v1/api",
-        "/api-docs/v1/api-token"
+        "/api-docs/v1/api-token",
+        "/api-docs/v1/assign-assignment"
       ]
     },
     {
