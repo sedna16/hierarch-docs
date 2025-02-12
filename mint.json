@@ -192,7 +192,7 @@
             "/api-docs/v1/api",
             "/api-docs/v1/api-token",
             "/api-docs/v1/api-auth",
-            "/api/v1/get-company"
+            "/api-docs/v1/get-company"
           ]
         }
       ]
