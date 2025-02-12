@@ -180,6 +180,12 @@
       ]
     },
     {
+      "group": "API Test",
+      "pages": [
+        "/api/v1/api"
+      ]
+    },
+    {
       "group": "Workflows",
       "pages": [
         "workflows",
