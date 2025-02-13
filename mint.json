@@ -1,6 +1,12 @@
 {
   "$schema": "https://mintlify.com/schema.json",
   "name": "Hierarch.io Help Center",
+  "seo": {
+    "indexing": "all",
+    "metatags": {
+      "og:image": "/images/help-center-banner.png",
+    }
+  },
   "logo": {
     "dark": "/logo/logo-text-dark.png",
     "light": "/logo/logo-text.png"
