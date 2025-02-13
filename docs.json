@@ -1,0 +1,292 @@
+{
+    "$schema": "https://mintlify.com/schema.json",
+    "name": "Hierarch.io Help Center",
+    "seo": {
+      "indexing": "all"
+    },
+    "logo": {
+      "dark": "/logo/logo-text-dark.png",
+      "light": "/logo/logo-text.png"
+    },
+    "favicon": "/logo/logo.png",
+    "colors": {
+      "primary": "#24695C",
+      "light": "#07C983",
+      "dark": "#24695C",
+      "anchors": {
+        "from": "#24695C",
+        "to": "#07C983"
+      },
+      "background": {
+        "light": "#f5f7fb",
+        "dark": "#202938"
+      }
+    },
+    "topbarLinks": [
+      {
+        "name": "Support",
+        "url": "mailto:jan@hierarch.io"
+      },
+      {
+        "name": "Blog",
+        "url": "https://hierarch.io/blog/"
+      }
+    ],
+    "topbarCtaButton": {
+      "name": "Dashboard",
+      "url": "https://app.hierarch.io/"
+    },
+    "tabs": [
+      {
+        "name": "API",
+        "url": "api-docs"
+      },
+      {
+        "name": "Workflows",
+        "url": "workflows"
+      },
+      {
+        "name": "Changelogs",
+        "url": "changelogs"
+      }
+    ],
+    "anchors": [],
+    "navigation": [
+      {
+        "group": "Get Started",
+        "pages": [
+          "introduction",
+          {
+              "group": "Tutorials",
+              "pages": [
+                "tutorials",
+                "/tutorials/how-to-create-company",
+                "/tutorials/how-to-edit-company-information",
+                "/tutorials/how-to-delete-company",
+                "/tutorials/how-to-create-product",
+                "/tutorials/how-to-edit-product-information",
+                "/tutorials/how-to-delete-product",
+                "/tutorials/how-to-add-pipeline-stage",
+                "/tutorials/how-to-edit-pipeline-stage",
+                "/tutorials/how-to-remove-pipeline-stage",
+                "/tutorials/how-to-create-role",
+                "/tutorials/how-to-edit-role-information",
+                "/tutorials/how-to-change-role-privilege",
+                "/tutorials/how-to-assign-personnel-role",
+                "/tutorials/how-to-delete-role",
+                "/tutorials/how-to-request-consultation",
+                "/tutorials/how-to-create-consultation",
+                "/tutorials/how-to-edit-consultation-information",
+                "/tutorials/how-to-create-assignment-record",
+                "/tutorials/how-to-edit-assignment-information",
+                "/tutorials/how-to-delete-assignment-record",
+                "/tutorials/how-to-create-client-record",
+                "/tutorials/how-to-send-invite-to-client",
+                "/tutorials/how-to-edit-client-information",
+                "/tutorials/how-to-delete-client-record",
+                "/tutorials/how-to-create-handbook",
+                "/tutorials/how-to-add-pages-to-handbook",
+                "/tutorials/how-to-edit-handbook-information",
+                "/tutorials/how-to-delete-handbook",
+                "/tutorials/how-to-create-personnel-record",
+                "/tutorials/how-to-send-invite-to-personnel",
+                "/tutorials/how-to-edit-personnel-information",
+                "/tutorials/how-to-delete-personnel-record",
+                "/tutorials/how-to-create-workflow",
+                "/tutorials/what-is-a-trigger",
+                "/tutorials/what-is-a-module",
+                "/tutorials/how-to-add-module",
+                "/tutorials/how-to-select-data-from-another-module",
+                "/tutorials/how-to-change-trigger-module",
+                "/tutorials/how-to-delete-module",
+                "/tutorials/how-to-add-router-node",
+                "/tutorials/how-to-change-background-text-color",
+                "/tutorials/how-to-auto-arrange-modules",
+                "/tutorials/how-to-delete-workflow",
+                "/tutorials/how-to-turn-grid-on",
+                "/tutorials/how-to-change-grid-size"
+              ]
+          },
+          {
+              "group": "Integrations",
+              "pages": [
+                "integrations",
+                "/integrations/slack",
+                "/integrations/discord",
+                "/integrations/zapier",
+                "/integrations/integromat-make-com",
+                "/integrations/hubspot",
+                "/integrations/asana",
+                "/integrations/trello",
+                "/integrations/monday",
+                "/integrations/notion",
+                "/integrations/airtable",
+                "/integrations/mailchimp",
+                "/integrations/activecampaign",
+                "/integrations/brevo"
+              ]
+          },
+          {
+            "group": "Forms",
+            "pages": [
+              "/forms/forms",
+              "/forms/form-builder",
+              "/forms/fields",
+              "/forms/templates",
+              "/forms/integrations"
+            ]
+          },
+          "payments",
+          "faqs"
+        ]
+      },
+      {
+        "group": "API Documentation",
+        "pages": [
+          {
+            "group": "v1",
+            "pages": [
+              "/api-docs/v1/api",
+              "/api-docs/v1/api-token",
+              "/api-docs/v1/api-auth",
+              "/api-docs/v1/get-company",
+              "/api-docs/v1/query-products",
+              "/api-docs/v1/get-product",
+              "/api-docs/v1/create-product",
+              "/api-docs/v1/edit-product",
+              "/api-docs/v1/delete-product",
+              "/api-docs/v1/query-roles",
+              "/api-docs/v1/get-role",
+              "/api-docs/v1/query-consultations",
+              "/api-docs/v1/get-consultation",
+              "/api-docs/v1/create-consultation",
+              "/api-docs/v1/edit-consultation",
+              "/api-docs/v1/query-assignments",
+              "/api-docs/v1/get-assignment",
+              "/api-docs/v1/create-assignment",
+              "/api-docs/v1/assign-assignment",
+              "/api-docs/v1/edit-assignment",
+              "/api-docs/v1/delete-assignment",
+              "/api-docs/v1/query-clients",
+              "/api-docs/v1/get-client",
+              "/api-docs/v1/create-client",
+              "/api-docs/v1/edit-client",
+              "/api-docs/v1/delete-client",
+              "/api-docs/v1/query-personnel",
+              "/api-docs/v1/get-personnel",
+              "/api-docs/v1/create-personnel",
+              "/api-docs/v1/edit-personnel",
+              "/api-docs/v1/delete-personnel" 
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Workflows",
+        "pages": [
+          "workflows",
+          {
+            "group": "Triggers",
+            "pages": [
+              "/workflows/triggers/webhooks",
+              "/workflows/triggers/pipeline-changed",
+              "/workflows/triggers/assignment-created",
+              "/workflows/triggers/assignment-edited",
+              "/workflows/triggers/client-created",
+              "/workflows/triggers/client-edited",
+              "/workflows/triggers/personnel-created",
+              "/workflows/triggers/personnel-edited",
+              "/workflows/triggers/consultation-created",
+              "/workflows/triggers/review-created",
+              "/workflows/triggers/ticket-created",
+              "/workflows/triggers/ticket-edited",
+              "/workflows/triggers/leave-approved",
+              "/workflows/triggers/leave-created",
+              "/workflows/triggers/leave-denied",
+              "/workflows/triggers/memo-created",
+              "/workflows/triggers/announcement-created",
+              "/workflows/triggers/form-submitted"
+            ]
+          },
+          {
+            "group": "Modules",
+            "pages": [
+              "/workflows/modules/create-assignment",
+              "/workflows/modules/search-assignments",
+              "/workflows/modules/get-all-assignments",
+              "/workflows/modules/get-assignment",
+              "/workflows/modules/edit-assignment",
+              "/workflows/modules/delete-assignment",
+              "/workflows/modules/assign-handbook",
+              "/workflows/modules/assign-client",
+              "/workflows/modules/assign-personnel",
+              "/workflows/modules/create-task",
+              "/workflows/modules/get-all-tasks",
+              "/workflows/modules/get-task",
+              "/workflows/modules/edit-task",
+              "/workflows/modules/invite-client",
+              "/workflows/modules/create-client",
+              "/workflows/modules/search-clients",
+              "/workflows/modules/get-all-clients",
+              "/workflows/modules/get-client",
+              "/workflows/modules/edit-client",
+              "/workflows/modules/delete-client",
+              "/workflows/modules/invite-personnel",
+              "/workflows/modules/create-personnel",
+              "/workflows/modules/search-personnel",
+              "/workflows/modules/get-all-personnel",
+              "/workflows/modules/get-personnel",
+              "/workflows/modules/edit-personnel",
+              "/workflows/modules/delete-personnel",
+              "/workflows/modules/get-all-inquiry",
+              "/workflows/modules/get-inquiry",
+              "/workflows/modules/create-consultation",
+              "/workflows/modules/search-consultations",
+              "/workflows/modules/get-all-consultations",
+              "/workflows/modules/get-consultation",
+              "/workflows/modules/edit-consultation",
+              "/workflows/modules/delete-consultation",
+              "/workflows/modules/get-all-reviews",
+              "/workflows/modules/get-review",
+              "/workflows/modules/get-all-review-comments",
+              "/workflows/modules/search-tickets",
+              "/workflows/modules/get-all-tickets",
+              "/workflows/modules/get-ticket",
+              "/workflows/modules/update-ticket",
+              "/workflows/modules/create-leave",
+              "/workflows/modules/get-all-leaves",
+              "/workflows/modules/get-leave",
+              "/workflows/modules/approve-leave",
+              "/workflows/modules/deny-leave",
+              "/workflows/modules/create-memo",
+              "/workflows/modules/search-memos",
+              "/workflows/modules/get-all-memos",
+              "/workflows/modules/get-memo",
+              "/workflows/modules/edit-memo",
+              "/workflows/modules/delete-memo",
+              "/workflows/modules/create-announcement",
+              "/workflows/modules/get-all-announcements",
+              "/workflows/modules/get-announcement",
+              "/workflows/modules/get-all-form-submissions",
+              "/workflows/modules/search-form-submissions",
+              "/workflows/modules/get-all-forms",
+              "/workflows/modules/get-form"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Updates",
+        "pages": [
+          "changelogs"
+        ]
+      }
+    ],
+    "footerSocials": {
+      "x": "https://x.com/HierarchOffic",
+      "facebook": "https://www.facebook.com/hierarchio",
+      "github": "https://github.com/sedna16/hierarch-docs",
+      "linkedin": "https://www.linkedin.com/company/hierarch-io/",
+      "youtube": "https://www.youtube.com/channel/UC8IUqujlhvKtqwncgFtGh2A"
+    }
+  }
